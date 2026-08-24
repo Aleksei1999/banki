@@ -98,6 +98,9 @@ footer a:hover{color:#fff}
 .quiz-form input{width:100%;padding:15px 16px;border:1.6px solid var(--border);border-radius:13px;font-size:1rem;font-family:var(--font-body);transition:.18s}
 .quiz-form input:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 4px rgba(37,99,235,.14)}
 .quiz-form .btn{width:100%;margin-top:4px}
+.quiz-consent{display:flex;align-items:flex-start;gap:9px;text-align:left;font-size:.8rem;color:var(--muted);line-height:1.4;cursor:pointer;margin-top:2px}
+.quiz-consent input{width:18px;height:18px;min-width:18px;margin:1px 0 0;accent-color:var(--blue);cursor:pointer}
+.quiz-consent a{color:var(--blue);text-decoration:underline}
 .quiz-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:2px}
 .quiz-trust{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:16px;color:var(--muted);font-size:.85rem;font-weight:600}
 .quiz-trust span{display:inline-flex;align-items:center;gap:6px}
@@ -535,6 +538,7 @@ function quizResult(cid){
     '<form class="quiz-form" onsubmit="return quizSubmit(\''+cid+'\',event)" novalidate>'+
     '<input id="'+cid+'_name" type="text" placeholder="Как к вам обращаться" required>'+
     '<input id="'+cid+'_phone" type="tel" inputmode="tel" placeholder="Телефон для связи" required oninput="maskPhone(this)">'+
+    '<label class="quiz-consent"><input id="'+cid+'_consent" type="checkbox" required><span>Я согласен на <a href="politika.html" target="_blank" rel="noopener">обработку персональных данных</a> и принимаю условия <a href="politika.html" target="_blank" rel="noopener">политики конфиденциальности</a>.</span></label>'+
     '<button type="submit" class="btn btn-primary btn-lg">Получить бесплатную консультацию</button>'+
     '<p class="quiz-note">Это бесплатно и ни к чему не обязывает</p></form>'+
     '<div class="quiz-trust"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Работаем по 127-ФЗ</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 30 городов России</span></div>'+
@@ -545,6 +549,7 @@ function quizSubmit(cid,e){
   var nm=document.getElementById(cid+'_name').value.trim();
   var ph=document.getElementById(cid+'_phone').value.trim();
   if(!nm||ph.replace(/\D/g,'').length<11){alert('Укажите имя и корректный телефон');return false}
+  var cs=document.getElementById(cid+'_consent'); if(cs && !cs.checked){alert('Нужно согласие на обработку персональных данных');return false}
   var payload=Object.assign({name:nm,phone:ph,source:'quiz'},QST[cid].a);
   var done=function(){
     document.getElementById(cid).innerHTML=quizProgHTML(100)+'<div class="quiz-inner"><div class="quiz-result">'+

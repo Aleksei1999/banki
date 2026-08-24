@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика конфиденциальности — Списали.com</title>
+<meta name="robots" content="noindex,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#161D2E; --blue:#2563EB; --blue-600:#1D4ED8; --blue-700:#1B3AA0;
+  --blue-050:#EAF1FF; --blue-025:#F5F8FF; --text:#1E273A; --muted:#5A6478;
+  --bg:#FFFFFF; --bg-soft:#F4F7FE; --border:#E6ECF4; --white:#fff;
+  --gold:#F4B740; --ok:#16A34A; --radius:20px; --radius-sm:12px; --radius-lg:28px;
+  --shadow-sm:0 2px 10px rgba(22,29,46,.05);
+  --shadow:0 18px 44px rgba(22,29,46,.10);
+  --shadow-lg:0 40px 90px rgba(22,29,46,.18);
+  --maxw:1180px; --ease:cubic-bezier(.2,.7,.2,1); --ease-back:cubic-bezier(.34,1.56,.64,1);
+  --font-head:'Golos Text',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  --font-body:'Golos Text',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:17px}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+h1,h2,h3,h4{margin:0;font-family:var(--font-head);line-height:1.08;letter-spacing:-.03em;font-weight:800;color:var(--ink)}
+h2{font-size:clamp(1.9rem,4vw,3rem)}
+h3{font-size:1.28rem;font-weight:700;letter-spacing:-.02em}
+p{margin:0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.82rem;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--blue);background:var(--blue-050);padding:8px 15px;border-radius:999px;font-family:var(--font-body)}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:1rem;font-family:var(--font-body);
+  padding:15px 26px;border-radius:14px;cursor:pointer;border:0;transition:transform .18s var(--ease),box-shadow .2s var(--ease),background .2s;white-space:nowrap}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 26px rgba(37,99,235,.30)}
+.btn-primary:hover{background:var(--blue-600);transform:translateY(-2px);box-shadow:0 18px 34px rgba(37,99,235,.36)}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--border)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+.btn-lg{padding:18px 34px;font-size:1.08rem}
+.btn:focus-visible{outline:3px solid rgba(37,99,235,.45);outline-offset:2px}
+body{padding-top:77px}
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(22,29,46,.06)}
+.nav{display:flex;align-items:center;gap:26px;height:76px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--font-head);font-weight:800;font-size:1.3rem;letter-spacing:-.03em}
+.brand img{height:40px;width:auto}
+.brand .w1{color:var(--ink)} .brand .w2{color:var(--ink)}
+.nav-links{display:flex;gap:26px;margin-left:14px}
+.nav-links a{color:var(--ink);font-weight:600;font-size:.97rem;opacity:.85;transition:opacity .2s}
+.nav-links a:hover{opacity:1;color:var(--blue)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:16px}
+.nav-phone{font-family:var(--font-head);font-weight:800;color:var(--ink);font-size:1.05rem;white-space:nowrap;letter-spacing:-.01em}
+.nav-phone span{display:block;font-size:.7rem;font-weight:600;color:var(--muted);font-family:var(--font-body);letter-spacing:0}
+.nav-login{font-weight:700;font-size:.97rem;color:var(--ink);border:1.5px solid var(--border);padding:11px 18px;border-radius:12px;transition:border-color .2s,color .2s}
+.nav-login:hover{border-color:var(--blue);color:var(--blue)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:6px}
+.mnav{display:none}
+footer{background:var(--ink);color:#C2CBDC;padding:58px 0 30px;font-size:.95rem}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:34px}
+.foot-brand{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:800;font-size:1.25rem;color:#fff;margin-bottom:14px}
+.foot-brand img{height:36px}
+.foot-brand .w2{color:#6FA0FF}
+footer h4{color:#fff;font-size:.95rem;margin:0 0 14px;font-weight:700;font-family:var(--font-head)}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:9px}
+footer a{color:#C2CBDC;transition:color .2s}
+footer a:hover{color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:38px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem;color:#8A96AD}
+.disclaimer{font-size:.8rem;color:#8A96AD;line-height:1.5;margin-top:10px}
+.reveal{opacity:0;transform:translateY(22px) scale(.975);transition:opacity .6s var(--ease),transform .6s var(--ease-back)}
+.reveal.in{opacity:1;transform:none}
+.btn:active{transform:scale(.97)}
+/* ==== QUIZ (shared: inline + modal) ==== */
+.quiz-card{background:#fff;border-radius:24px;box-shadow:var(--shadow-lg);border:1px solid var(--border);overflow:hidden}
+.quiz-prog{height:7px;background:var(--blue-050)}
+.quiz-prog i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),#63A0FF);width:0;transition:width .45s var(--ease);border-radius:0 6px 6px 0}
+.quiz-inner{padding:30px 30px 32px}
+.quiz-count{font-family:var(--font-body);font-size:.8rem;font-weight:700;color:var(--blue);letter-spacing:.05em;text-transform:uppercase}
+.quiz-q{font-family:var(--font-head);font-size:1.55rem;font-weight:800;letter-spacing:-.02em;margin:10px 0 6px;color:var(--ink)}
+.quiz-hint{color:var(--muted);font-size:.96rem;margin-bottom:20px}
+.quiz-opts{display:flex;flex-direction:column;gap:11px}
+.quiz-opt{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:#fff;border:1.6px solid var(--border);
+  border-radius:15px;padding:16px 18px;font-size:1.04rem;font-weight:600;color:var(--ink);cursor:pointer;font-family:var(--font-body);
+  transition:border-color .18s,background .18s,transform .12s,box-shadow .18s}
+.quiz-opt:hover{border-color:var(--blue);background:var(--blue-025);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+.quiz-opt:focus-visible{outline:3px solid rgba(37,99,235,.4);outline-offset:2px}
+.quiz-opt .dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--border);flex:none;transition:.18s}
+.quiz-opt:hover .dot{border-color:var(--blue);box-shadow:inset 0 0 0 4px var(--blue)}
+.quiz-back{margin-top:20px;background:none;border:0;color:var(--muted);font-weight:600;cursor:pointer;font-family:var(--font-body);display:inline-flex;align-items:center;gap:6px;padding:6px 2px}
+.quiz-back:hover{color:var(--ink)}
+.quiz-result{text-align:center}
+.quiz-result .rico{width:74px;height:74px;border-radius:50%;background:#E7F7EE;color:var(--ok);display:flex;align-items:center;justify-content:center;margin:2px auto 16px}
+.quiz-result h3{font-size:1.7rem}
+.quiz-sum{background:var(--bg-soft);border-radius:14px;padding:15px 18px;margin:18px 0;text-align:left;font-size:.95rem;color:var(--ink)}
+.quiz-sum b{color:var(--blue);font-family:var(--font-body)}
+.quiz-form{display:flex;flex-direction:column;gap:11px;margin-top:6px;text-align:left}
+.quiz-form input{width:100%;padding:15px 16px;border:1.6px solid var(--border);border-radius:13px;font-size:1rem;font-family:var(--font-body);transition:.18s}
+.quiz-form input:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 4px rgba(37,99,235,.14)}
+.quiz-form .btn{width:100%;margin-top:4px}
+.quiz-consent{display:flex;align-items:flex-start;gap:9px;text-align:left;font-size:.8rem;color:var(--muted);line-height:1.4;cursor:pointer;margin-top:2px}
+.quiz-consent input{width:18px;height:18px;min-width:18px;margin:1px 0 0;accent-color:var(--blue);cursor:pointer}
+.quiz-consent a{color:var(--blue);text-decoration:underline}
+.quiz-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:2px}
+.quiz-trust{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:16px;color:var(--muted);font-size:.85rem;font-weight:600}
+.quiz-trust span{display:inline-flex;align-items:center;gap:6px}
+.quiz-trust svg{color:var(--ok)}
+/* modal chrome */
+.quiz-overlay{position:fixed;inset:0;z-index:100;background:rgba(16,22,38,.6);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px}
+.quiz-overlay.show{display:flex}
+.quiz-modal{width:100%;max-width:560px;max-height:92vh;overflow:auto;position:relative;animation:qpop .3s var(--ease)}
+@keyframes qpop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.quiz-modal .quiz-close{position:absolute;top:14px;right:14px;z-index:2;background:#fff;border:1px solid var(--border);border-radius:10px;cursor:pointer;color:var(--muted);padding:7px;line-height:0}
+.quiz-modal .quiz-close:hover{color:var(--ink);border-color:var(--blue)}
+/* sticky mobile CTA bar */
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);box-shadow:0 -8px 26px rgba(22,29,46,.10)}
+.mcta .btn{flex:1;padding:15px 18px;font-size:1.02rem}
+.mcta .call{flex:none;width:52px;height:52px;border-radius:14px;border:1.5px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--blue)}
+.mcta .call:active{background:var(--blue-025)}
+@media(max-width:768px){.mcta{display:flex}body:has(.mcta){padding-bottom:80px}}
+@media(max-width:940px){.foot-grid{grid-template-columns:1fr 1fr}.nav-links,.nav-phone,.nav-login{display:none}.burger{display:block}
+  .mnav.show{display:block;padding:10px 22px 20px;border-top:1px solid var(--border);background:#fff}
+  .mnav a{display:block;padding:12px 4px;font-weight:600;border-bottom:1px solid var(--border)}}
+@media(max-width:560px){body{font-size:16px}.foot-grid{grid-template-columns:1fr}.quiz-q{font-size:1.3rem}.quiz-inner{padding:24px 20px}
+  .nav-cta{display:none}.nav{gap:14px}.brand{font-size:1.18rem}.brand img{height:34px}
+  .quiz-overlay{padding:12px}.quiz-modal{max-height:94vh}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}.btn:hover{transform:none}.quiz-modal{animation:none}}
+
+:root{--blue:#2258E4;--ink:#151A22;--text:#242A33;--muted:#697180;--border:#E9ECF2;--bg-soft:#F5F8FC}
+.legal{max-width:820px;margin:0 auto;padding:54px 22px 80px;font-family:'Golos Text',system-ui,sans-serif;color:var(--text)}
+.legal h1{font-family:'Montserrat',sans-serif;font-weight:700;color:#333844;font-size:clamp(1.8rem,4vw,2.5rem);margin:0 0 6px}
+.legal .upd{color:var(--muted);font-size:.92rem;margin-bottom:28px}
+.legal h2{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin:32px 0 10px}
+.legal p{line-height:1.7;margin:0 0 12px}
+.legal ul{margin:0 0 12px;padding-left:22px;line-height:1.7}
+.legal li{margin-bottom:6px}
+.legal a{color:var(--blue)}
+.legal .box{background:var(--bg-soft);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:18px 0;font-size:.95rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Списали.com — на главную">
+      <img src="logo.png" alt="Логотип Списали.com">
+      <span><span class="w1">Списали</span><span class="w2">.com</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Навигация">
+      <a href="index.html#how">Как это работает</a>
+      <a href="index.html#suits">Кому подходит</a>
+      <a href="blog.html">Блог</a>
+      <a href="index.html#faq">Вопросы</a>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:+78000000000" class="nav-phone">8 800 000-00-00<span>звонок бесплатный</span></a>
+      <button class="btn btn-primary nav-cta" style="padding:12px 20px" onclick="openQuiz()">Проверить долг</button>
+      <button class="burger" aria-label="Меню" aria-expanded="false" onclick="toggleMenu(this)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#161D2E" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mnav" id="mnav">
+    <button class="btn btn-primary" style="width:100%;margin:4px 0 10px" onclick="closeMenu();openQuiz()">Проверить долг</button>
+    <a href="index.html#how" onclick="closeMenu()">Как это работает</a>
+    <a href="index.html#suits" onclick="closeMenu()">Кому подходит</a>
+    <a href="index.html#debts" onclick="closeMenu()">Что списываем</a>
+    <a href="blog.html" onclick="closeMenu()">Блог</a>
+    <a href="index.html#faq" onclick="closeMenu()">Вопросы</a>
+    <a href="tel:+78000000000" onclick="closeMenu()">8 800 000-00-00</a>
+  </div>
+</header>
+
+<div class="legal">
+<h1>Политика в отношении обработки персональных данных</h1>
+<div class="upd">Сервис «Списали.com» · spisali.com</div>
+
+<p>Настоящая Политика определяет порядок обработки и защиты персональных данных пользователей сайта spisali.com (далее — «Сайт») и разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+
+<h2>1. Какие данные мы собираем</h2>
+<p>При заполнении формы заявки или прохождении теста на Сайте вы предоставляете следующие данные:</p>
+<ul>
+<li>имя (как к вам обращаться);</li>
+<li>номер телефона для связи;</li>
+<li>сведения о вашей финансовой ситуации, указанные в тесте (сумма задолженности, наличие просрочек и т. п.).</li>
+</ul>
+
+<h2>2. Цели обработки</h2>
+<p>Персональные данные обрабатываются в целях: связи с вами по оставленной заявке, бесплатной оценки вашей ситуации юристом, оказания консультационных и юридических услуг, а также информирования о статусе обращения.</p>
+
+<h2>3. Правовые основания</h2>
+<p>Обработка осуществляется на основании вашего согласия, которое вы даёте, отмечая соответствующее поле при отправке заявки, а также в целях исполнения договора, стороной которого вы являетесь.</p>
+
+<h2>4. Передача данных</h2>
+<p>Ваши данные могут передаваться юристам-партнёрам платформы, оказывающим услуги в рамках Федерального закона № 127-ФЗ «О несостоятельности (банкротстве)», исключительно для целей, указанных выше. Мы не продаём и не передаём данные третьим лицам в иных целях.</p>
+
+<h2>5. Хранение и защита</h2>
+<p>Данные хранятся в течение срока, необходимого для достижения целей обработки, и защищаются организационными и техническими мерами от несанкционированного доступа.</p>
+
+<h2>6. Ваши права</h2>
+<p>Вы вправе отозвать согласие на обработку персональных данных, запросить их уточнение, блокирование или удаление, направив обращение на нашу электронную почту.</p>
+
+<div class="box">Согласие можно отозвать в любой момент, направив письмо на <b>000000@gmail.com</b>. После отзыва обработка данных прекращается, если иное не предусмотрено законодательством.</div>
+
+<h2>7. Контакты</h2>
+<p>По вопросам обработки персональных данных: телефон <b>8&nbsp;800&nbsp;000-00-00</b>, e-mail <b>000000@gmail.com</b>.</p>
+
+<div class="box">Это типовой шаблон. Перед публикацией замените контакты-заглушки на реальные и, при необходимости, согласуйте текст с юристом с учётом особенностей вашей деятельности.</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img src="logo.png" alt=""><span>Списали<span class="w2">.com</span></span></div>
+        <p>Первый сервис удалённого списания долгов и кредитов по всей России. Всё оформляется дистанционно; офисы в 30 городах.</p>
+        <p class="disclaimer">Услуги оказывают юристы-партнёры платформы в рамках Федерального закона №127-ФЗ «О несостоятельности (банкротстве)». Информация на сайте не является публичной офертой.</p>
+      </div>
+      <div><h4>Платформа</h4><ul>
+        <li><a href="index.html#how">Как это работает</a></li>
+        <li><a href="index.html#suits">Кому подходит</a></li>
+        <li><a href="index.html#debts">Что списываем</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="index.html#faq">Вопросы и ответы</a></li>
+      </ul></div>
+      <div><h4>Контакты</h4><ul>
+        <li><a href="tel:+78000000000">8 800 000-00-00</a></li>
+        <li><a href="mailto:000000@gmail.com">000000@gmail.com</a></li>
+        <li>Пн–Вс, 9:00–21:00</li>
+        <li>Офисы в 30 городах России</li>
+      </ul></div>
+      <div><h4>Остались вопросы?</h4>
+        <p style="margin-bottom:14px">Пройдите короткий тест — узнаете, что можно списать.</p>
+        <button class="btn btn-primary" style="padding:12px 22px" onclick="openQuiz()">Проверить долг</button>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Списали.com. Все права защищены.</span>
+      <span><a href="#">Политика конфиденциальности</a> · <a href="#">Согласие на обработку данных</a></span>
+    </div>
+  </div>
+</footer>
+<div class="mcta">
+  <a href="tel:+78000000000" class="call" aria-label="Позвонить">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+  </a>
+  <button class="btn btn-primary" onclick="openQuiz()">Проверить долг бесплатно</button>
+</div>
+</body></html>

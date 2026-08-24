@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Списали.com — законное списание долгов, кредитов и задолженностей | Офисы в 30 городах</title>
-<meta name="description" content="Всероссийская платформа Списали.com — законное списание долгов, кредитов и задолженностей. Пройдите тест за 1 минуту, бесплатная консультация юриста, офисы в 30 городах России. Работаем по 127-ФЗ.">
-<meta property="og:title" content="Списали.com — законное списание долгов и кредитов">
-<meta property="og:description" content="Всероссийская платформа списания долгов. Тест за 1 минуту, бесплатная консультация, офисы в 30 городах России.">
+<title>Списали.com — первый сервис удалённого списания долгов и кредитов по всей России</title>
+<meta name="description" content="Списали.com — первый сервис удалённого списания долгов и кредитов по всей России. Всё дистанционно, без визитов в офис. Тест за 1 минуту, бесплатная консультация юриста, работаем по 127-ФЗ.">
+<meta property="og:title" content="Списали.com — удалённое списание долгов и кредитов по всей России">
+<meta property="og:description" content="Первый сервис удалённого списания долгов и кредитов. Всё дистанционно, тест за 1 минуту и бесплатная консультация юриста.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LegalService", "name": "Списали.com", "description": "Всероссийская платформа для законного списания долгов, кредитов и задолженностей через банкротство (127-ФЗ). Офисы в 30 городах России.", "telephone": "+7-800-000-00-00", "email": "000000@gmail.com", "areaServed": "RU", "priceRange": "Бесплатная консультация"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Golos+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LegalService", "name": "Списали.com", "description": "Первый сервис удалённого списания долгов и кредитов по всей России через банкротство (127-ФЗ). Всё дистанционно; офисы в 30 городах.", "telephone": "+7-800-000-00-00", "email": "000000@gmail.com", "areaServed": "RU", "priceRange": "Бесплатная консультация"}</script>
 <style>
 :root{
   --ink:#161D2E; --blue:#2563EB; --blue-600:#1D4ED8; --blue-700:#1B3AA0;
@@ -21,9 +21,9 @@
   --shadow-sm:0 2px 10px rgba(22,29,46,.05);
   --shadow:0 18px 44px rgba(22,29,46,.10);
   --shadow-lg:0 40px 90px rgba(22,29,46,.18);
-  --maxw:1180px; --ease:cubic-bezier(.2,.7,.2,1);
-  --font-head:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
-  --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  --maxw:1180px; --ease:cubic-bezier(.2,.7,.2,1); --ease-back:cubic-bezier(.34,1.56,.64,1);
+  --font-head:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  --font-body:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -74,8 +74,9 @@ footer a{color:#C2CBDC;transition:color .2s}
 footer a:hover{color:#fff}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:38px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem;color:#8A96AD}
 .disclaimer{font-size:.8rem;color:#8A96AD;line-height:1.5;margin-top:10px}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal{opacity:0;transform:translateY(22px) scale(.975);transition:opacity .6s var(--ease),transform .6s var(--ease-back)}
 .reveal.in{opacity:1;transform:none}
+.btn:active{transform:scale(.97)}
 /* ==== QUIZ (shared: inline + modal) ==== */
 .quiz-card{background:#fff;border-radius:24px;box-shadow:var(--shadow-lg);border:1px solid var(--border);overflow:hidden}
 .quiz-prog{height:7px;background:var(--blue-050)}
@@ -103,6 +104,9 @@ footer a:hover{color:#fff}
 .quiz-form input{width:100%;padding:15px 16px;border:1.6px solid var(--border);border-radius:13px;font-size:1rem;font-family:var(--font-body);transition:.18s}
 .quiz-form input:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 4px rgba(37,99,235,.14)}
 .quiz-form .btn{width:100%;margin-top:4px}
+.quiz-consent{display:flex;align-items:flex-start;gap:9px;text-align:left;font-size:.8rem;color:var(--muted);line-height:1.4;cursor:pointer;margin-top:2px}
+.quiz-consent input{width:18px;height:18px;min-width:18px;margin:1px 0 0;accent-color:var(--blue);cursor:pointer}
+.quiz-consent a{color:var(--blue);text-decoration:underline}
 .quiz-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:2px}
 .quiz-trust{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:16px;color:var(--muted);font-size:.85rem;font-weight:600}
 .quiz-trust span{display:inline-flex;align-items:center;gap:6px}
@@ -110,10 +114,17 @@ footer a:hover{color:#fff}
 /* modal chrome */
 .quiz-overlay{position:fixed;inset:0;z-index:100;background:rgba(16,22,38,.6);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px}
 .quiz-overlay.show{display:flex}
-.quiz-modal{width:100%;max-width:560px;max-height:92vh;overflow:auto;position:relative;animation:qpop .3s var(--ease);background:#fff;border-radius:24px;box-shadow:var(--shadow-lg);border:1px solid var(--border);-webkit-overflow-scrolling:touch}
+.quiz-modal{width:100%;max-width:560px;max-height:92vh;overflow:auto;position:relative;animation:qpop .3s var(--ease);background:#fff;border-radius:24px;box-shadow:var(--shadow-lg)}
 @keyframes qpop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
 .quiz-modal .quiz-close{position:absolute;top:14px;right:14px;z-index:2;background:#fff;border:1px solid var(--border);border-radius:10px;cursor:pointer;color:var(--muted);padding:7px;line-height:0}
 .quiz-modal .quiz-close:hover{color:var(--ink);border-color:var(--blue)}
+/* sticky mobile CTA bar */
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);box-shadow:0 -8px 26px rgba(22,29,46,.10)}
+.mcta .btn{flex:1;padding:15px 18px;font-size:1.02rem}
+.mcta .call{flex:none;width:52px;height:52px;border-radius:14px;border:1.5px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--blue)}
+.mcta .call:active{background:var(--blue-025)}
+@media(max-width:768px){.mcta{display:flex}body:has(.mcta){padding-bottom:80px}}
 @media(max-width:940px){.foot-grid{grid-template-columns:1fr 1fr}.nav-links,.nav-phone,.nav-login{display:none}.burger{display:block}
   .mnav.show{display:block;padding:10px 22px 20px;border-top:1px solid var(--border);background:#fff}
   .mnav a{display:block;padding:12px 4px;font-weight:600;border-bottom:1px solid var(--border)}}
@@ -142,6 +153,22 @@ footer a:hover{color:#fff}
 .stat{text-align:center;position:relative}
 .stat .num{font-family:var(--font-head);font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;letter-spacing:-.04em;background:linear-gradient(90deg,#fff,#A6C6FF);-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat .lbl{color:#B7C0D4;font-size:.92rem;margin-top:4px;font-weight:500}
+/* proof marquee (banks/МФО) */
+.proof{padding:30px 0 6px}
+.proof .lbl{text-align:center;color:var(--muted);font-weight:600;font-size:.92rem;margin-bottom:16px}
+.marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:14px;width:max-content;animation:marq 34s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.mq-item{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow-sm);
+  border-radius:14px;padding:12px 20px;font-weight:700;color:var(--ink);white-space:nowrap;font-size:1rem}
+.mq-item svg{color:var(--blue);flex:none}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* hero entrance */
+.hero .anim{opacity:0;transform:translateY(24px);animation:heroUp .7s var(--ease-back) forwards}
+.hero .anim.d1{animation-delay:.05s}.hero .anim.d2{animation-delay:.15s}.hero .anim.d3{animation-delay:.27s}.hero .anim.d4{animation-delay:.39s}.hero .anim.d5{animation-delay:.5s}
+.quiz-teaser.anim{opacity:0;transform:translateY(24px) scale(.98);animation:heroPop .8s var(--ease-back) .2s forwards}
+@keyframes heroUp{to{opacity:1;transform:none}}
+@keyframes heroPop{to{opacity:1;transform:none}}
 .sec{padding:80px 0}
 .sec-head{max-width:720px;margin:0 auto 46px;text-align:center}
 .sec-head p{color:var(--muted);font-size:1.1rem;margin-top:14px}
@@ -216,16 +243,252 @@ footer a:hover{color:#fff}
   .hero-cta .btn{width:100%}
   .pill-top{white-space:normal;line-height:1.5;text-align:left}
 }
-@media(max-width:560px){.cards,.feat,.steps,.reviews{grid-template-columns:1fr}.stats-inner{grid-template-columns:1fr 1fr;padding:30px 14px;gap:14px}.stat .num{font-size:1.5rem;letter-spacing:-.03em}.hero{padding:12px 0 46px}.sec{padding:52px 0}.cta-inner,.cities-inner{padding:36px 22px}
+@media(max-width:560px){.cards,.feat,.steps,.reviews{grid-template-columns:1fr}.stats-inner{grid-template-columns:1fr 1fr;padding:26px 16px;gap:22px 14px}.hero{padding:28px 0 44px}.sec{padding:50px 0}.cta-inner,.cities-inner{padding:34px 20px}
   .btn-lg{padding:16px 22px;font-size:1.02rem}
   .btn{white-space:normal}
   .cta-inner .btn,.suit-note .btn,.more-btn{width:100%}
-  .sec-head{margin-bottom:34px}
+  .sec-head{margin-bottom:32px}
+  .hero h1{font-size:2.05rem;line-height:1.12}
+  .hero .lead{font-size:1.05rem;margin-top:16px}
+  .pill-top{font-size:.8rem;padding:7px 13px 7px 7px}
+  .pill-top .b{font-size:.66rem;padding:4px 9px}
+  .stat .num{font-size:1.65rem}.stat .lbl{font-size:.82rem}
+  .step,.dcard,.fcard,.rcard{padding:22px}
+  .suit-card{padding:24px 20px}.suit-card h3{font-size:1.2rem}
+  .step .n{width:42px;height:42px}
+  .city-chips{gap:7px}.city-chips span{font-size:.84rem;padding:7px 12px}
+  .sec-head p{font-size:1rem}
+  .hero-trust{gap:14px 20px}
 }
-@media(prefers-reduced-motion:reduce){.step:hover,.dcard:hover{transform:none}}
+@media(max-width:380px){.stats-inner{grid-template-columns:1fr}.hero h1{font-size:1.9rem}}
+@media(prefers-reduced-motion:reduce){.step:hover,.dcard:hover{transform:none}
+  .hero .anim,.quiz-teaser.anim{animation:none;opacity:1;transform:none}
+  .marquee-track{animation:none}
+  .btn:active{transform:none}}
+
+/* ===== EDITORIAL PREMIUM LAYER (homepage) ===== */
+:root{
+  --bg:#FFFFFF; --bg-soft:#F5F8FC; --border:#E9ECF2; --ink:#151A22; --text:#242A33; --muted:#697180;
+  --blue:#2258E4; --blue-600:#1B49C6; --blue-700:#163597; --blue-050:#EBF1FF; --blue-025:#F6F8FF; --gold:#C89B3C;
+  --font-body:'Golos Text',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  --font-head:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  --font-display:'Montserrat',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --shadow-sm:0 1px 2px rgba(20,22,27,.03),0 4px 14px rgba(20,22,27,.05);
+  --shadow:0 14px 40px rgba(20,22,27,.09);
+  --shadow-lg:0 34px 80px rgba(20,22,27,.16);
+  --radius:16px; --radius-lg:22px;
+}
+body{background:var(--bg);color:var(--text);letter-spacing:-.006em}
+/* display serif on the big titles + stat numerals */
+.hero h1,.sec-head h2,.cta-inner h2,.cities-inner h2,.stat .num,.quiz-q{font-family:var(--font-display)}
+.hero h1{font-weight:700;font-size:clamp(2.1rem,4.2vw,3.35rem);line-height:1.1;letter-spacing:-.02em;color:#333844}
+.hero h1 .nb{white-space:nowrap}
+.hero h1 .hl{color:var(--blue);font-weight:700}
+.sec-head h2{font-weight:700;font-size:clamp(1.9rem,3.8vw,2.9rem);letter-spacing:-.02em;color:#333844}
+.cta-inner h2,.cities-inner h2{font-weight:700;letter-spacing:-.02em}
+.stat .num{font-weight:700;letter-spacing:-.015em;background:none;color:#fff}
+.quiz-q{font-weight:700;letter-spacing:-.015em;color:#333844}
+.step h3,.dcard h3,.fcard h3,.suit-card h3{font-weight:700;letter-spacing:-.015em;color:#363B47}
+/* editorial eyebrow: hairline + tracked caps, no pill */
+.eyebrow{background:none;border:0;color:var(--muted);padding:0;border-radius:0;text-transform:uppercase;
+  letter-spacing:.18em;font-size:.74rem;font-weight:600;font-family:var(--font-body);display:inline-flex;align-items:center;gap:12px}
+.eyebrow:before{content:"";width:26px;height:1px;background:var(--blue);display:inline-block}
+/* header refined */
+header{background:rgba(255,255,255,.86);border-bottom:1px solid var(--border)}
+.brand{font-family:var(--font-head);font-weight:700;letter-spacing:-.025em}
+.nav-links a{font-weight:500}
+.nav-login{border-radius:10px;font-weight:600}
+.nav-phone{font-family:var(--font-body);font-weight:700}
+/* hero background: quiet, warm, editorial */
+.hero{background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%);padding:64px 0 84px}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(760px 380px at 88% -12%,rgba(34,88,228,.08),transparent 60%);pointer-events:none}
+.hero .wrap{position:relative}
+.hero .lead{font-size:1.16rem;color:var(--muted);line-height:1.65}
+.pill-top{background:#fff;border:1px solid var(--border);box-shadow:var(--shadow-sm);font-weight:600;font-family:var(--font-body)}
+.pill-top .b{background:var(--blue);font-weight:600}
+.hero-trust .t{font-weight:500}
+/* buttons: refined, less shouty */
+.btn{border-radius:12px;font-weight:600;letter-spacing:0}
+.btn-primary{background:var(--blue);box-shadow:0 10px 24px rgba(34,88,228,.20)}
+.btn-primary:hover{background:var(--blue-600);box-shadow:0 14px 30px rgba(34,88,228,.26)}
+.btn-ghost{background:#fff;border:1px solid var(--border)}
+.btn-lg{padding:17px 32px}
+/* quiz card lighter/editorial */
+.quiz-card{border-radius:20px;box-shadow:var(--shadow-lg);border:1px solid var(--border)}
+.quiz-teaser .tag{background:var(--ink);color:#fff;font-family:var(--font-body);font-weight:600;box-shadow:0 8px 20px rgba(20,22,27,.18)}
+.quiz-opt{border-radius:12px}
+/* generous whitespace = expensive */
+.sec{padding:84px 0}
+.sec-head{margin-bottom:46px}
+.sec-head p{color:var(--muted);font-size:1.08rem}
+/* stats band: deep ink, refined */
+.stats-inner{background:#14161B;border-radius:22px;padding:52px 40px}
+.stats-inner:before{background:radial-gradient(600px 260px at 88% -10%,rgba(34,88,228,.28),transparent 60%)}
+.stat .num{font-size:clamp(2.1rem,4.2vw,3rem)}
+.stat .lbl{color:#A7ABB2;font-family:var(--font-body)}
+/* cards: hairline borders, soft shadow, more padding, gentle hover */
+.step,.dcard,.fcard,.rcard,.suit-card{border:1px solid var(--border);box-shadow:var(--shadow-sm);border-radius:16px}
+.step{padding:32px 28px}.dcard{padding:32px}.fcard{padding:34px}.rcard{padding:28px}.suit-card{padding:36px}
+.step:hover,.dcard:hover{box-shadow:var(--shadow);border-color:#D9D4C7;transform:translateY(-3px)}
+/* soft 3D icon tiles */
+.dcard .ic,.step .n{width:60px;height:60px;border-radius:17px;color:var(--blue-700);
+  background:linear-gradient(155deg,#F0F5FF 0%,#DCE6FF 100%);
+  box-shadow:0 10px 20px rgba(34,88,228,.16),inset 0 1.5px 0 rgba(255,255,255,.9),inset 0 -2px 6px rgba(34,88,228,.10)}
+.dcard .ic svg{width:28px;height:28px}
+.step .n{font-family:var(--font-display);font-weight:700;font-size:1.3rem;color:var(--blue-700)}
+.fcard .ic{width:56px;height:56px;border-radius:16px;background:linear-gradient(155deg,#3E74FF 0%,#1E49C4 100%);
+  box-shadow:0 12px 24px rgba(34,88,228,.34),inset 0 1.5px 0 rgba(255,255,255,.35),inset 0 -3px 8px rgba(0,0,40,.18)}
+.fcard .ic svg{width:26px;height:26px}
+.suit-card .h-ic{border-radius:13px;box-shadow:inset 0 1px 0 rgba(255,255,255,.8)}
+/* proof marquee: quiet, refined chips */
+.mq-item{border:1px solid var(--border);box-shadow:none;background:#fff;font-family:var(--font-body);font-weight:600;border-radius:12px}
+.proof .lbl{font-family:var(--font-body);letter-spacing:.02em}
+/* cities + cta bands: refined blue */
+.cities-inner,.cta-inner{border-radius:22px}
+.cta-inner p,.cities-inner p{font-family:var(--font-body)}
+/* faq editorial */
+.q button.qh{font-family:var(--font-body);font-weight:600}
+.q{border-radius:14px}
+/* section thin divider accent under eyebrow area (optional subtlety) */
+.stars{color:var(--gold)}
+.suit-note{font-family:var(--font-body)}
+/* ===== PEOPLE / faces ===== */
+.face{position:relative;border-radius:50%;overflow:hidden;background:var(--blue-050);color:var(--blue);
+  display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;flex:none}
+.face .fi{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.face img{position:relative;width:100%;height:100%;object-fit:cover;display:block}
+.rwho .av{background:none;padding:0;overflow:visible}
+.rwho .av .face{width:44px;height:44px;font-size:1rem}
+/* hero social proof avatar stack */
+.hero-social{display:flex;align-items:center;gap:14px;margin-top:24px}
+.astack{display:flex}
+.astack .face{width:44px;height:44px;border:2.5px solid var(--bg);margin-left:-12px;box-shadow:0 2px 8px rgba(20,22,27,.12)}
+.astack .face:first-child{margin-left:0}
+.hero-social .txt{font-size:.92rem;color:var(--muted);font-weight:500;line-height:1.35}
+.hero-social .txt b{color:var(--ink);font-weight:700}
+.hero-social .stars{color:var(--gold);font-size:.9rem;margin:0 0 2px}
+/* centered social strip */
+.social-strip{padding:4px 0 0}
+.ss-inner{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center}
+.ss-inner .astack .face{width:48px;height:48px;border:3px solid var(--bg);box-shadow:0 4px 12px rgba(20,22,27,.14)}
+.ss-txt{font-size:1.05rem;color:var(--muted);font-weight:500}
+.ss-txt .stars{color:var(--gold);margin-right:8px;letter-spacing:1px;font-size:1rem;display:inline}
+.ss-txt b{color:var(--ink);font-weight:700}
+@media(max-width:560px){.ss-inner{gap:10px}.ss-txt{font-size:.92rem}.ss-inner .astack .face{width:40px;height:40px}}
+/* team section */
+.team{background:var(--bg-soft)}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:8px}
+.tm{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px 16px;text-align:center;box-shadow:var(--shadow-sm);transition:transform .2s var(--ease-back),box-shadow .2s}
+.tm:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.tm .face{width:96px;height:96px;margin:0 auto 14px;font-size:1.6rem;border:3px solid #fff;box-shadow:0 8px 20px rgba(20,22,27,.10)}
+.tm b{display:block;font-family:var(--font-head);font-weight:700;font-size:1.02rem;color:#333844}
+.tm span{display:block;color:var(--muted);font-size:.86rem;margin-top:3px}
+@media(max-width:940px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.team-grid{grid-template-columns:repeat(2,1fr);gap:14px}.tm .face{width:82px;height:82px}.hero-social .txt{font-size:.86rem}}
+/* ===== blog CTA band ===== */
+.blogcta .bt-inner{background:linear-gradient(135deg,var(--blue-700),var(--blue));border-radius:24px;padding:44px;color:#fff;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;box-shadow:var(--shadow)}
+.bt-eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;font-weight:600;color:#BFD2FF;font-family:var(--font-body)}
+.bt-eyebrow:before{content:"";width:26px;height:1px;background:#8FB0FF;display:inline-block}
+.blogcta h2{color:#fff;font-size:clamp(1.6rem,2.6vw,2.2rem);margin:12px 0}
+.blogcta p{color:#DCE7FF;font-size:1.05rem}
+.bt-btn{background:#fff;color:var(--blue-700);margin-top:20px}.bt-btn:hover{background:#F3F6FF}
+.bt-chips{display:flex;flex-direction:column;gap:10px}
+.bt-chip{display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:13px;padding:15px 18px;color:#fff;font-weight:600;font-size:1rem;transition:background .2s,transform .2s}
+.bt-chip:hover{background:rgba(255,255,255,.18);transform:translateX(4px)}
+.bt-chip svg{flex:none;color:#BFD2FF}
+@media(max-width:860px){.blogcta .bt-inner{grid-template-columns:1fr;padding:30px 22px;gap:22px}}
+/* ===== promo / countdown — bright yellow, white text ===== */
+.promo-sec{padding:8px 0 20px}
+.promo-inner{background:linear-gradient(135deg,#FFDA1F 0%,#FFC400 55%,#FFB800 100%);border:0;border-radius:28px;padding:52px 40px;text-align:center;color:#fff;box-shadow:0 24px 60px rgba(255,184,0,.42);position:relative;overflow:hidden}
+/* animated diagonal shine sweep */
+.promo-inner:before{content:"";position:absolute;top:-60%;left:-30%;width:60%;height:220%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:rotate(8deg);animation:promoShine 5s ease-in-out infinite}
+@keyframes promoShine{0%{left:-40%}55%,100%{left:130%}}
+/* soft floating light blobs */
+.promo-inner:after{content:"";position:absolute;inset:0;background:radial-gradient(340px 200px at 88% -10%,rgba(255,255,255,.45),transparent 60%),radial-gradient(300px 180px at 6% 115%,rgba(255,255,255,.35),transparent 60%);pointer-events:none}
+.promo-inner>*{position:relative;z-index:1}
+.promo-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.28);color:#fff;border:1px solid rgba(255,255,255,.6);padding:8px 16px;border-radius:999px;font-weight:800;font-size:.86rem;font-family:var(--font-body);backdrop-filter:blur(2px)}
+.promo-inner h2{color:#fff;margin:16px 0 10px;text-shadow:0 2px 10px rgba(180,120,0,.25)}
+.pcode{color:#fff;border:2px dashed rgba(255,255,255,.85);padding:5px 22px;border-radius:12px;white-space:nowrap;letter-spacing:.08em;display:inline-block;margin-top:6px;animation:codePulse 1.8s ease-in-out infinite}
+@keyframes codePulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.0)}50%{box-shadow:0 0 0 6px rgba(255,255,255,.22)}}
+.promo-inner p{color:#fff;max-width:580px;margin:0 auto;font-size:1.06rem;opacity:.96}
+.ptimer{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px 0}
+.ptimer .tblock{background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.5);border-radius:14px;padding:12px 8px;min-width:82px;backdrop-filter:blur(2px)}
+.ptimer .tblock b{font-family:var(--font-display);font-weight:800;font-size:2.2rem;display:block;line-height:1;color:#fff}
+.ptimer .tblock span{font-size:.72rem;color:#fff;opacity:.9;letter-spacing:.04em;margin-top:5px;display:block}
+.ptimer i{font-size:1.6rem;color:rgba(255,255,255,.8);font-style:normal;font-weight:700}
+.promo-inner .btn{background:#fff;color:#B8760A;font-weight:800;box-shadow:0 10px 26px rgba(150,90,0,.28)}
+.promo-inner .btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 16px 34px rgba(150,90,0,.34)}
+.promo-note{font-size:.82rem;color:#fff;opacity:.9;margin-top:14px}
+@media(max-width:560px){.promo-inner{padding:36px 18px}.ptimer{gap:8px}.ptimer .tblock{min-width:62px;padding:10px 4px}.ptimer .tblock b{font-size:1.6rem}.pcode{display:inline-block;margin-top:6px}}
+@media(max-width:560px){.hero h1{font-size:2.15rem;line-height:1.1}.sec-head{margin-bottom:34px}}
+/* ===== FINAL FIXES ===== */
+:root{--yellow:#FFCC00}
+/* keep "2,4 млрд ₽" on one line */
+.stat .num{white-space:nowrap;font-size:clamp(1.65rem,3.3vw,2.4rem)}
+/* uniform rhythm between all blocks */
+.hero{padding:60px 0!important}
+.sec,.stats,.proof,.social-strip,.promo-sec,.cta{padding:60px 0!important}
+.sec-head{margin-bottom:44px}
+/* (promo block styled light-yellow above — no dark overrides here) */
+/* top announcement / promo bar — bright yellow */
+.topbar{background:linear-gradient(90deg,#FFD400,#FFC400);color:#3a2d00;position:relative;z-index:60;box-shadow:0 2px 14px rgba(255,196,0,.45)}
+.topbar-in{display:flex;align-items:center;justify-content:center;gap:13px;flex-wrap:wrap;padding:11px 22px;font-size:.95rem}
+.topbar .tb-tag{background:#111C36;color:#FFD400;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-radius:7px;padding:4px 10px;flex:none;display:inline-flex;align-items:center;gap:6px}
+.topbar .tb-gift{display:inline-flex;flex:none}
+.topbar b{font-weight:800;color:#1c1500}
+.topbar .tb-code{font-weight:800;letter-spacing:.02em;background:#111C36;color:#FFD400;border-radius:6px;padding:2px 8px}
+.topbar .tb-timer{background:#111C36;border-radius:8px;padding:5px 11px;font-weight:800;font-variant-numeric:tabular-nums;color:#FFD400;letter-spacing:.05em}
+.topbar .tb-btn{background:#111C36;color:#fff;border:0;border-radius:10px;padding:9px 18px;font-weight:800;cursor:pointer;font-family:var(--font-body);transition:background .2s,transform .15s;flex:none}
+.topbar .tb-btn:hover{background:#22305a;transform:translateY(-1px)}
+@media(max-width:760px){.topbar-in{gap:9px;font-size:.88rem;padding:10px 14px}.topbar .tb-long{display:none}}
+/* mobile: center text */
+@media(max-width:768px){
+  .hero,.sec,.stats,.proof,.social-strip,.promo-sec,.cta{padding:44px 0!important}
+  .hero-grid>div:first-child{text-align:center}
+  .hero .pill-top{justify-content:center}
+  .hero .lead{margin-left:auto;margin-right:auto}
+  .hero-cta{justify-content:center}
+  .hero-trust{justify-content:center}
+  .hero-trust .t{justify-content:center}
+  .step,.dcard,.fcard{text-align:center}
+  .step .n,.dcard .ic,.fcard .ic{margin-left:auto;margin-right:auto}
+  .suit-card h3{justify-content:center}
+  .tm{text-align:center}
+}
+/* stats band → bright brand blue (was dark) */
+.stats-inner{background:linear-gradient(135deg,var(--blue-700),var(--blue))!important}
+.stats-inner .stat .lbl{color:#DCE7FF!important}
+/* badge text same size as pill text; one line; tidy mobile alignment */
+.pill-top .b{white-space:nowrap;flex:none;font-size:inherit!important;letter-spacing:.01em}
+.pill-top{flex-wrap:nowrap}
+.pill-top>span:last-child,.pill-top{white-space:nowrap}
+@media(max-width:560px){.hero .pill-top{font-size:.68rem!important;padding:7px 12px 7px 7px;gap:8px}}
+/* ===== shimmer sweep on the existing colored bands (colors unchanged) ===== */
+.stats-inner,.cities-inner,.blogcta .bt-inner,.cta-inner{position:relative;overflow:hidden}
+.stats-inner:before,.cities-inner:before,.blogcta .bt-inner:before,.cta-inner:before{
+  content:"";position:absolute;top:-60%;left:-40%;width:55%;height:220%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent)!important;
+  transform:rotate(8deg);animation:promoShine 5.5s ease-in-out infinite;pointer-events:none;z-index:0}
+.cities-inner:before{animation-delay:.9s}
+.blogcta .bt-inner:before{animation-delay:1.8s}
+.cta-inner:before{animation-delay:2.7s}
+.stats-inner>*,.cities-inner>*,.blogcta .bt-inner>*,.cta-inner>*{position:relative;z-index:1}
+/* ===== top bar: white text on yellow + shimmer, just АКЦИЯ + timer ===== */
+.topbar .tb-text,.topbar .tb-btn{display:none!important}
+.topbar{background:linear-gradient(90deg,#FFD400,#FFC400)!important;color:#fff!important;overflow:hidden}
+.topbar:before{content:"";position:absolute;top:-60%;left:-40%;width:45%;height:220%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:rotate(8deg);animation:promoShine 5s ease-in-out infinite;pointer-events:none;z-index:0}
+.topbar-in{position:relative;z-index:1}
+.topbar .tb-tag{background:rgba(255,255,255,.25)!important;color:#fff!important;border:1px solid rgba(255,255,255,.6)!important;text-shadow:0 1px 4px rgba(160,110,0,.35)}
+.topbar .tb-timer{background:rgba(255,255,255,.22)!important;color:#fff!important;border:1px solid rgba(255,255,255,.5);text-shadow:0 1px 4px rgba(160,110,0,.35)}
 </style>
 </head>
 <body>
+<div class="topbar"><div class="wrap topbar-in">
+  <span class="tb-tag"><span class="tb-gift"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S12 2 8.5 2 5 5.5 8 7h4zM12 7s0-5 3.5-5S19 5.5 16 7h-4z"/></svg></span>Акция&nbsp;·&nbsp;−20%</span>
+  <span class="tb-text">Скидка <b>−20%</b> по промокоду <b class="tb-code">ЗАКОН20</b><span class="tb-long"> — закрепите за собой</span></span>
+  <span class="tb-timer" id="tbTimer">00:00:00</span>
+  <button class="tb-btn" onclick="openQuiz()">Оставить заявку</button>
+</div></div>
 <header>
   <div class="wrap nav">
     <a href="index.html" class="brand" aria-label="Списали.com — на главную">
@@ -239,7 +502,8 @@ footer a:hover{color:#fff}
       <a href="index.html#faq">Вопросы</a>
     </nav>
     <div class="nav-right">
-      <a href="tel:+78000000000" class="nav-phone">8 800 000-00-00<span>звонок бесплатный</span></a>      <button class="btn btn-primary nav-cta" style="padding:12px 20px" onclick="openQuiz()">Проверить долг</button>
+      <a href="tel:+78000000000" class="nav-phone">8 800 000-00-00<span>звонок бесплатный</span></a>
+      <button class="btn btn-primary nav-cta" style="padding:12px 20px" onclick="openQuiz()">Проверить долг</button>
       <button class="burger" aria-label="Меню" aria-expanded="false" onclick="toggleMenu(this)">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#161D2E" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -251,37 +515,50 @@ footer a:hover{color:#fff}
     <a href="index.html#suits" onclick="closeMenu()">Кому подходит</a>
     <a href="index.html#debts" onclick="closeMenu()">Что списываем</a>
     <a href="blog.html" onclick="closeMenu()">Блог</a>
-    <a href="index.html#faq" onclick="closeMenu()">Вопросы</a>    <a href="tel:+78000000000" onclick="closeMenu()">8 800 000-00-00</a>
+    <a href="index.html#faq" onclick="closeMenu()">Вопросы</a>
+    <a href="tel:+78000000000" onclick="closeMenu()">8 800 000-00-00</a>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="pill-top"><span class="b">Всероссийская платформа</span> Офисы в 30 городах России</span>
-      <h1 style="margin-top:18px">Спишем ваши долги, кредиты и задолженности — <span class="hl">законно</span></h1>
-      <p class="lead">Пройдите короткий тест — узнаете, какие долги можно списать в вашей ситуации. Юрист бесплатно оценит дело. Без предоплаты и давления.</p>
-      <div class="hero-cta">
+      <span class="pill-top anim d1"><span class="b">Всероссийская платформа</span> офисы в 30 городах</span>
+      <h1 class="anim d2" style="margin-top:18px">Спишем ваши долги, кредиты и задолженности <span class="nb">— <span class="hl">законно</span></span></h1>
+      <p class="lead anim d3">Списываем долги и кредиты <b style="color:var(--ink)">полностью дистанционно</b> — из любого региона России, без визитов в офис. Пройдите короткий тест, и юрист бесплатно оценит вашу ситуацию.</p>
+      <div class="hero-cta anim d4">
         <button class="btn btn-primary btn-lg hero-primary" onclick="openQuiz()">Узнать, спишут ли мой долг</button>
         <a href="#how" class="btn btn-ghost btn-lg hero-secondary">Как это работает</a>
       </div>
-      <div class="hero-trust"><div class="t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Бесплатная консультация</div><div class="t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Работаем по 127-ФЗ</div><div class="t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Оплата за результат</div></div>
+      <div class="hero-trust anim d5"><div class="t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Полностью дистанционно</div><div class="t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Работаем по 127-ФЗ</div><div class="t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Оплата за результат</div></div>
     </div>
-    <div id="quizSection" class="quiz-teaser"><span class="tag">★ Бесплатно · 1 минута</span><div id="quizInline" class="quiz-card"></div></div>
+    <div id="quizSection" class="quiz-teaser anim"><span class="tag">★ Бесплатно · 1 минута</span><div id="quizInline" class="quiz-card"></div></div>
   </div>
 </section>
 
-<section class="stats"><div class="wrap"><div class="stats-inner reveal">
-  <div class="stat"><div class="num">2,4 млрд ₽</div><div class="lbl">списано долгов клиентам</div></div>
-  <div class="stat"><div class="num">7 800+</div><div class="lbl">человек избавились от долгов</div></div>
-  <div class="stat"><div class="num">30</div><div class="lbl">городов России</div></div>
-  <div class="stat"><div class="num">120+</div><div class="lbl">юристов в команде</div></div>
+<section class="social-strip"><div class="wrap"><div class="ss-inner reveal">
+  <div class="astack"><span class="face "><span class="fi">М</span><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span><span class="face "><span class="fi">А</span><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span><span class="face "><span class="fi">Е</span><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span><span class="face "><span class="fi">Д</span><img src="https://randomuser.me/api/portraits/men/45.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span><span class="face "><span class="fi">О</span><img src="https://randomuser.me/api/portraits/women/63.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span></div>
+  <div class="ss-txt"><span class="stars">★★★★★</span><b>7 800+ человек</b> уже списали свои долги вместе со «Списали.com»</div>
 </div></div></section>
+
+<section class="stats"><div class="wrap"><div class="stats-inner reveal" id="statsBox">
+  <div class="stat"><div class="num" data-count="2.4" data-dec="1" data-suffix=" млрд ₽">2,4 млрд ₽</div><div class="lbl">списано долгов клиентам</div></div>
+  <div class="stat"><div class="num" data-count="7800" data-suffix="+">7 800+</div><div class="lbl">человек избавились от долгов</div></div>
+  <div class="stat"><div class="num" data-count="30">30</div><div class="lbl">городов России</div></div>
+  <div class="stat"><div class="num" data-count="120" data-suffix="+">120+</div><div class="lbl">юристов в команде</div></div>
+</div></div></section>
+
+<section class="proof"><div class="wrap">
+  <div class="lbl reveal">Списываем долги перед банками и МФО по всей России</div>
+  <div class="marquee reveal"><div class="marquee-track">
+    <span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Сбербанк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>ВТБ</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Альфа-Банк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Тинькофф</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Совкомбанк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Газпромбанк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Райффайзен</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Почта Банк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>ОТП Банк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Хоум Кредит</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>МТС Банк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Ренессанс</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Русский Стандарт</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Займер</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Быстроденьги</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>MoneyMan</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Езаём</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Сбербанк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>ВТБ</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Альфа-Банк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Тинькофф</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Совкомбанк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Газпромбанк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Райффайзен</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Почта Банк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>ОТП Банк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Хоум Кредит</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>МТС Банк</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Ренессанс</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Русский Стандарт</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Займер</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Быстроденьги</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>MoneyMan</span><span class="mq-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg>Езаём</span>
+  </div></div>
+</div></section>
 
 <section class="sec" id="how"><div class="wrap">
   <div class="sec-head reveal"><span class="eyebrow">Просто и понятно</span><h2 style="margin-top:16px">Как проходит списание</h2>
     <p>Четыре шага — а всё сложное берут на себя юристы платформы. Вам не нужно разбираться в законах.</p></div>
-  <div class="steps">
+  <div class="steps stagger">
     <div class="step reveal"><div class="n">1</div><h3>Проходите тест</h3><p>Отвечаете на несколько вопросов или оставляете заявку. Бесплатно и ни к чему не обязывает.</p></div>
     <div class="step reveal"><div class="n">2</div><h3>Бесплатная консультация</h3><p>Юрист изучает вашу ситуацию и честно говорит, что реально списать и как.</p></div>
     <div class="step reveal"><div class="n">3</div><h3>Готовим документы</h3><p>Собираем всё необходимое и запускаем законную процедуру. Вы под защитой.</p></div>
@@ -292,7 +569,7 @@ footer a:hover{color:#fff}
 <section class="sec suits" id="suits"><div class="wrap">
   <div class="sec-head reveal"><span class="eyebrow">Кому подходит</span><h2 style="margin-top:16px">Подходит ли вам банкротство</h2>
     <p>Банкротство — это не «крайняя мера для безнадёжных». Оно подходит обычным людям в трудной ситуации. Проверьте себя.</p></div>
-  <div class="suits-grid">
+  <div class="suits-grid stagger">
     <div class="suit-card yes reveal">
       <h3><span class="h-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Банкротство вам подходит, если</h3>
       <ul class="suit-list">
@@ -321,7 +598,7 @@ footer a:hover{color:#fff}
 <section class="sec" id="debts"><div class="wrap">
   <div class="sec-head reveal"><span class="eyebrow">Что списываем</span><h2 style="margin-top:16px">С какими долгами помогаем</h2>
     <p>Работаем практически с любой задолженностью физических лиц и ИП.</p></div>
-  <div class="cards">
+  <div class="cards stagger">
     <div class="dcard reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg></div><h3>Банковские кредиты</h3><p>Потребительские, автокредиты и другие займы, которые стало нечем платить.</p></div>
     <div class="dcard reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 2.5-5 1.5-5 4a2.5 2 0 0 0 5 0"/></svg></div><h3>Микрозаймы и МФО</h3><p>Долги с огромными процентами, которые растут быстрее, чем вы их гасите.</p></div>
     <div class="dcard reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h7M9 17h7"/></svg></div><h3>Долги по распискам</h3><p>Задолженность перед физлицами и займы, оформленные распиской.</p></div>
@@ -331,37 +608,58 @@ footer a:hover{color:#fff}
   </div>
 </div></section>
 
+<section class="sec blogcta"><div class="wrap"><div class="bt-inner reveal">
+  <div class="bt-text">
+    <span class="bt-eyebrow">Блог</span>
+    <h2>В блоге — 50+ статей, которые помогут разобраться</h2>
+    <p>Банкротство, кредиты, микрозаймы, приставы, ЖКХ — простым языком, без юридического жаргона. Заходите и читайте.</p>
+    <a href="blog.html" class="btn btn-lg bt-btn">Открыть блог</a>
+  </div>
+  <div class="bt-chips">
+    <a href="bankrotstvo-fizlic.html" class="bt-chip"><span>Банкротство физлица: пошагово</span> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="spisanie-mikrozaymov.html" class="bt-chip"><span>Как списать микрозаймы</span> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="zashchita-ot-kollektorov.html" class="bt-chip"><span>Как защититься от коллекторов</span> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="stoimost-bankrotstva.html" class="bt-chip"><span>Сколько стоит банкротство</span> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</div></div></section>
+
 <section class="sec why"><div class="wrap">
   <div class="sec-head reveal"><span class="eyebrow">Почему нам доверяют</span><h2 style="margin-top:16px">Списали.com — это спокойствие</h2>
     <p>Мы объединили сильных юристов на одной платформе, чтобы каждый получил помощь честно и без переплат.</p></div>
-  <div class="feat">
+  <div class="feat stagger">
     <div class="fcard reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg></div><h3>Только законные способы</h3><p>Действуем строго по закону №127-ФЗ «О банкротстве». Никаких серых схем.</p></div>
     <div class="fcard reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Оплата за результат</h3><p>Прозрачные условия и рассрочка. Вы понимаете, за что платите, ещё до начала.</p></div>
     <div class="fcard reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div><h3>Защита от коллекторов</h3><p>После старта процедуры звонки и визиты прекращаются — по закону.</p></div>
-    <div class="fcard reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg></div><h3>Офисы в 30 городах</h3><p>Всероссийская платформа: помогаем очно и дистанционно жителям всех регионов.</p></div>
+    <div class="fcard reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg></div><h3>Полностью удалённо</h3><p>Оформляем списание дистанционно из любого региона России. Плюс офисы в 30 городах.</p></div>
     <div class="fcard reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Честные сроки</h3><p>Сразу говорим реальные сроки и не обещаем невозможного ради красивой цифры.</p></div>
     <div class="fcard reveal"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><h3>Сотни успешных дел</h3><p>Опыт команды — миллиарды рублей списанных долгов реальных людей.</p></div>
   </div>
 </div></section>
 
+<section class="sec team"><div class="wrap">
+  <div class="sec-head reveal"><span class="eyebrow">Команда</span><h2 style="margin-top:16px">Над вашим делом работают живые люди</h2>
+    <p>Юристы и персональный менеджер — не бот и не колл-центр. С вами на связи от заявки до полного списания долга.</p></div>
+  <div class="team-grid stagger"><div class="tm reveal"><span class="face "><span class="fi">А</span><img src="https://randomuser.me/api/portraits/women/9.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span><b>Анна Ф.</b><span>Ведущий юрист по банкротству</span></div><div class="tm reveal"><span class="face "><span class="fi">Д</span><img src="https://randomuser.me/api/portraits/men/11.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span><b>Дмитрий К.</b><span>Юрист, сопровождение в суде</span></div><div class="tm reveal"><span class="face "><span class="fi">О</span><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span><b>Ольга С.</b><span>Персональный менеджер</span></div><div class="tm reveal"><span class="face "><span class="fi">П</span><img src="https://randomuser.me/api/portraits/men/51.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span><b>Павел М.</b><span>Юрист по спорам с МФО</span></div><div class="tm reveal"><span class="face "><span class="fi">И</span><img src="https://randomuser.me/api/portraits/women/26.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span><b>Ирина В.</b><span>Юрист, защита от коллекторов</span></div></div>
+</div></section>
+
 <section class="sec"><div class="wrap"><div class="cities-inner reveal">
-  <h2>Всероссийская платформа</h2>
-  <p>Офисы в 30 городах России и дистанционное сопровождение. Где бы вы ни жили — мы поможем законно списать долги.</p>
+  <h2>Работаем удалённо по всей России</h2>
+  <p>Первый сервис удалённого списания долгов и кредитов: всё оформляется дистанционно, без визитов в офис. Плюс наши офисы в 30 городах — где бы вы ни жили, мы поможем.</p>
   <div class="city-chips"><span>Москва</span><span>Санкт-Петербург</span><span>Новосибирск</span><span>Екатеринбург</span><span>Казань</span><span>Нижний Новгород</span><span>Челябинск</span><span>Самара</span><span>Омск</span><span>Ростов-на-Дону</span><span>Уфа</span><span>Красноярск</span><span>Воронеж</span><span>Пермь</span><span>Волгоград</span><span>Краснодар</span><span>Саратов</span><span>Тюмень</span><span>Тольятти</span><span>Ижевск</span><span>Барнаул</span><span>Иркутск</span><span>Хабаровск</span><span>Владивосток</span><span>Ярославль</span><span>Махачкала</span><span>Томск</span><span>Оренбург</span><span>Кемерово</span><span>Рязань</span><span class="more">и другие города</span></div>
 </div></div></section>
 
 <section class="sec"><div class="wrap">
   <div class="sec-head reveal"><span class="eyebrow">Отзывы</span><h2 style="margin-top:16px">Люди, которые снова дышат свободно</h2>
     <p>Реальные истории клиентов из разных городов России.</p></div>
-  <div class="reviews collapsed" id="reviews"><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Три года платила микрозаймы и только уходила в минус. Здесь объяснили всё спокойно, без пугалок. Через несколько месяцев долгов не стало.»</p>
-<div class="rwho"><div class="av">М</div><div><b>Марина, 41 год, Казань</b><span>Долг 640 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Боялся банкротства, думал заберут всё. Юрист по шагам показал, что это не так. Коллекторы отстали сразу.»</p>
-<div class="rwho"><div class="av">А</div><div><b>Алексей, 35 лет, Екатеринбург</b><span>Долг 1 200 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Понравилось, что не давили и не требовали денег вперёд. Была рассрочка. Теперь могу спокойно планировать жизнь.»</p>
-<div class="rwho"><div class="av">Е</div><div><b>Елена, 29 лет, Новосибирск</b><span>Долг 480 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Несколько кредитов и поручительство — думал, это тупик. Разложили по полочкам и довели до конца. Огромное спасибо команде.»</p>
-<div class="rwho"><div class="av">Д</div><div><b>Дмитрий, 47 лет, Москва</b><span>Долг 2 100 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Дохода не было, приставы закрыли дело. Помогли оформить бесплатное банкротство через МФЦ без единой ошибки.»</p>
-<div class="rwho"><div class="av">О</div><div><b>Ольга, 38 лет, Ростов-на-Дону</b><span>Долг 350 000 ₽ (МФЦ)</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Приставы списывали половину пенсии. После обращения списания прекратились, а через полгода долг закрыли по закону.»</p>
-<div class="rwho"><div class="av">С</div><div><b>Сергей, 52 года, Самара</b><span>Долг 890 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Кредитка, два займа и постоянные звонки. Взяли всё на себя, я только приносила документы. Спокойствие бесценно.»</p>
-<div class="rwho"><div class="av">Н</div><div><b>Наталья, 33 года, Краснодар</b><span>Долг 720 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Как ИП остался с долгами после закрытия бизнеса. Честно сказали сроки и цену сразу. Всё прошло как обещали.»</p>
-<div class="rwho"><div class="av">И</div><div><b>Игорь, 44 года, Нижний Новгород</b><span>Долг 1 500 000 ₽ списан</span></div></div></div></div>
+  <div class="reviews collapsed stagger" id="reviews"><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Три года платила микрозаймы и только уходила в минус. Здесь объяснили всё спокойно, без пугалок. Через несколько месяцев долгов не стало.»</p>
+<div class="rwho"><div class="av"><span class="face "><span class="fi">М</span><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span></div><div><b>Марина, 41 год, Казань</b><span>Долг 640 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Боялся банкротства, думал заберут всё. Юрист по шагам показал, что это не так. Коллекторы отстали сразу.»</p>
+<div class="rwho"><div class="av"><span class="face "><span class="fi">А</span><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span></div><div><b>Алексей, 35 лет, Екатеринбург</b><span>Долг 1 200 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Понравилось, что не давили и не требовали денег вперёд. Была рассрочка. Теперь могу спокойно планировать жизнь.»</p>
+<div class="rwho"><div class="av"><span class="face "><span class="fi">Е</span><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span></div><div><b>Елена, 29 лет, Новосибирск</b><span>Долг 480 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Несколько кредитов и поручительство — думал, это тупик. Разложили по полочкам и довели до конца. Огромное спасибо команде.»</p>
+<div class="rwho"><div class="av"><span class="face "><span class="fi">Д</span><img src="https://randomuser.me/api/portraits/men/45.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span></div><div><b>Дмитрий, 47 лет, Москва</b><span>Долг 2 100 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Дохода не было, приставы закрыли дело. Помогли оформить бесплатное банкротство через МФЦ без единой ошибки.»</p>
+<div class="rwho"><div class="av"><span class="face "><span class="fi">О</span><img src="https://randomuser.me/api/portraits/women/63.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span></div><div><b>Ольга, 38 лет, Ростов-на-Дону</b><span>Долг 350 000 ₽ (МФЦ)</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Приставы списывали половину пенсии. После обращения списания прекратились, а через полгода долг закрыли по закону.»</p>
+<div class="rwho"><div class="av"><span class="face "><span class="fi">С</span><img src="https://randomuser.me/api/portraits/men/60.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span></div><div><b>Сергей, 52 года, Самара</b><span>Долг 890 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Кредитка, два займа и постоянные звонки. Взяли всё на себя, я только приносила документы. Спокойствие бесценно.»</p>
+<div class="rwho"><div class="av"><span class="face "><span class="fi">Н</span><img src="https://randomuser.me/api/portraits/women/21.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span></div><div><b>Наталья, 33 года, Краснодар</b><span>Долг 720 000 ₽ списан</span></div></div></div><div class="rcard reveal"><div class="stars">★★★★★</div><p class="txt">«Как ИП остался с долгами после закрытия бизнеса. Честно сказали сроки и цену сразу. Всё прошло как обещали.»</p>
+<div class="rwho"><div class="av"><span class="face "><span class="fi">И</span><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span></div><div><b>Игорь, 44 года, Нижний Новгород</b><span>Долг 1 500 000 ₽ списан</span></div></div></div></div>
   <div class="more-wrap"><button class="btn btn-ghost more-btn" data-more="Показать все отзывы" data-less="Свернуть отзывы" onclick="toggleMore(this,'#reviews')">Показать все отзывы
     <svg class="mchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button></div>
 </div></section>
@@ -375,6 +673,19 @@ footer a:hover{color:#fff}
     <svg class="mchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button></div>
 </div></section>
 
+<section class="sec promo-sec"><div class="wrap"><div class="promo-inner reveal">
+  <span class="promo-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S12 2 8.5 2 5 5.5 8 7h4zM12 7s0-5 3.5-5S19 5.5 16 7h-4z"/></svg> Специальное предложение</span>
+  <h2>Зафиксируйте скидку по промокоду <span class="pcode">ЗАКОН20</span></h2>
+  <p>Оставьте заявку сейчас — и промокод на скидку по стоимости сопровождения закрепится за вами. Предложение действует ограниченное время.</p>
+  <div class="ptimer" id="promoTimer">
+    <div class="tblock"><b id="tH">00</b><span>часов</span></div><i>:</i>
+    <div class="tblock"><b id="tM">00</b><span>минут</span></div><i>:</i>
+    <div class="tblock"><b id="tS">00</b><span>секунд</span></div>
+  </div>
+  <button class="btn btn-lg" onclick="openQuiz()">Забрать скидку по промокоду</button>
+  <p class="promo-note">Промокод применится к вашей заявке автоматически.</p>
+</div></div></section>
+
 <section class="cta"><div class="wrap"><div class="cta-inner reveal">
   <h2>Сделайте первый шаг к жизни без долгов</h2>
   <p>Это бесплатно и ни к чему не обязывает. Пройдите короткий тест и узнайте, что можно списать в вашей ситуации.</p>
@@ -386,7 +697,7 @@ footer a:hover{color:#fff}
     <div class="foot-grid">
       <div>
         <div class="foot-brand"><img src="logo.png" alt=""><span>Списали<span class="w2">.com</span></span></div>
-        <p>Всероссийская платформа для законного списания долгов, кредитов и задолженностей. Офисы в 30 городах России.</p>
+        <p>Первый сервис удалённого списания долгов и кредитов по всей России. Всё оформляется дистанционно; офисы в 30 городах.</p>
         <p class="disclaimer">Услуги оказывают юристы-партнёры платформы в рамках Федерального закона №127-ФЗ «О несостоятельности (банкротстве)». Информация на сайте не является публичной офертой.</p>
       </div>
       <div><h4>Платформа</h4><ul>
@@ -413,6 +724,12 @@ footer a:hover{color:#fff}
     </div>
   </div>
 </footer>
+<div class="mcta">
+  <a href="tel:+78000000000" class="call" aria-label="Позвонить">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+  </a>
+  <button class="btn btn-primary" onclick="openQuiz()">Проверить долг бесплатно</button>
+</div>
 
 <div class="quiz-overlay" id="quizOverlay" role="dialog" aria-modal="true" aria-label="Проверка списания долга">
   <div class="quiz-modal">
@@ -428,6 +745,24 @@ function toggleQ(btn){var q=btn.parentElement;var a=q.querySelector('.a');var op
 function toggleMore(btn,sel){var el=document.querySelector(sel);var isCol=el.classList.toggle('collapsed');btn.classList.toggle('open',!isCol);
   var label=isCol?btn.dataset.more:btn.dataset.less;btn.childNodes[0].nodeValue=label+' ';
   if(isCol){el.scrollIntoView({behavior:'smooth',block:'start'})}}
+// count-up stats (motion-framer style: animate on view, respect reduced-motion)
+(function(){var box=document.getElementById('statsBox');if(!box)return;
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fmt(v,dec){if(dec)return v.toFixed(dec).replace('.',',');return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ');}
+  function run(){box.querySelectorAll('.num[data-count]').forEach(function(el){
+    var target=parseFloat(el.getAttribute('data-count'));var dec=parseInt(el.getAttribute('data-dec')||'0',10);var suf=el.getAttribute('data-suffix')||'';
+    if(rm){el.textContent=fmt(target,dec)+suf;return;}
+    var dur=1300,start=null;function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);var e=1-Math.pow(1-p,3);
+      el.textContent=fmt(target*e,dec)+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
+  var o=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){run();o.disconnect();}})},{threshold:.4});o.observe(box);
+})();
+// promo countdown (rolling, to end of day)
+(function(){var h=document.getElementById('tH');var tb=document.getElementById('tbTimer');if(!h&&!tb)return;function pad(n){return(n<10?'0':'')+n}
+  function tick(){var now=new Date();var end=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,0,0,0);var d=Math.max(0,end-now);
+    var hh=Math.floor(d/3600000),mm=Math.floor(d%3600000/60000),ss=Math.floor(d%60000/1000);
+    if(h){h.textContent=pad(hh);document.getElementById('tM').textContent=pad(mm);document.getElementById('tS').textContent=pad(ss);}
+    if(tb){tb.textContent=pad(hh)+':'+pad(mm)+':'+pad(ss);}}
+  tick();setInterval(tick,1000);})();
 var FORM_ENDPOINT='';
 
 
@@ -469,6 +804,7 @@ function quizResult(cid){
     '<form class="quiz-form" onsubmit="return quizSubmit(\''+cid+'\',event)" novalidate>'+
     '<input id="'+cid+'_name" type="text" placeholder="Как к вам обращаться" required>'+
     '<input id="'+cid+'_phone" type="tel" inputmode="tel" placeholder="Телефон для связи" required oninput="maskPhone(this)">'+
+    '<label class="quiz-consent"><input id="'+cid+'_consent" type="checkbox" required><span>Я согласен на <a href="politika.html" target="_blank" rel="noopener">обработку персональных данных</a> и принимаю условия <a href="politika.html" target="_blank" rel="noopener">политики конфиденциальности</a>.</span></label>'+
     '<button type="submit" class="btn btn-primary btn-lg">Получить бесплатную консультацию</button>'+
     '<p class="quiz-note">Это бесплатно и ни к чему не обязывает</p></form>'+
     '<div class="quiz-trust"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Работаем по 127-ФЗ</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 30 городов России</span></div>'+
@@ -479,11 +815,14 @@ function quizSubmit(cid,e){
   var nm=document.getElementById(cid+'_name').value.trim();
   var ph=document.getElementById(cid+'_phone').value.trim();
   if(!nm||ph.replace(/\D/g,'').length<11){alert('Укажите имя и корректный телефон');return false}
-  var payload=Object.assign({name:nm,phone:ph,source:'quiz'},QST[cid].a);
+  var cs=document.getElementById(cid+'_consent');
+  if(cs && !cs.checked){alert('Пожалуйста, подтвердите согласие на обработку персональных данных');return false}
+  var payload=Object.assign({name:nm,phone:ph,consent:true,source:'quiz'},QST[cid].a);
   var done=function(){
     document.getElementById(cid).innerHTML=quizProgHTML(100)+'<div class="quiz-inner"><div class="quiz-result">'+
     '<div class="rico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>'+
-    '<h3>Заявка принята!</h3><p class="muted" style="margin-top:10px">Юрист свяжется с вами в ближайшее время и бесплатно оценит вашу ситуацию.</p></div></div>';
+    '<h3>Заявка принята!</h3><p class="muted" style="margin-top:10px">Юрист свяжется с вами в ближайшее время и бесплатно оценит вашу ситуацию.</p>'+
+    '<div style="margin-top:14px;background:#FFF7E6;border:1px solid #F3E0B0;border-radius:12px;padding:12px 14px;font-size:.92rem;color:#7A5A12"><b>🎁 Скидка по промокоду ЗАКОН20 закреплена за вами.</b> Назовите его юристу при разговоре.</div></div></div>';
   };
   if(typeof FORM_ENDPOINT!=='undefined' && FORM_ENDPOINT){
     fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(done).catch(function(){alert('Не удалось отправить. Позвоните: 8 800 000-00-00')});
@@ -508,7 +847,9 @@ document.addEventListener('DOMContentLoaded',function(){
   var inline=document.getElementById('quizInline'); if(inline){quizStart('quizInline')}
 });
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeQuiz()});
-var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});
+var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var el=en.target;var p=el.parentElement;
+  if(p&&p.classList.contains('stagger')){var idx=Array.prototype.indexOf.call(p.children,el);el.style.transitionDelay=((idx%6)*0.07)+'s'}
+  el.classList.add('in');io.unobserve(el)}})},{threshold:.12});
 document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)})});
 </script>
 </body>

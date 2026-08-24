@@ -109,6 +109,13 @@ footer a:hover{color:#fff}
 @keyframes qpop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
 .quiz-modal .quiz-close{position:absolute;top:14px;right:14px;z-index:2;background:#fff;border:1px solid var(--border);border-radius:10px;cursor:pointer;color:var(--muted);padding:7px;line-height:0}
 .quiz-modal .quiz-close:hover{color:var(--ink);border-color:var(--blue)}
+/* sticky mobile CTA bar */
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);box-shadow:0 -8px 26px rgba(22,29,46,.10)}
+.mcta .btn{flex:1;padding:15px 18px;font-size:1.02rem}
+.mcta .call{flex:none;width:52px;height:52px;border-radius:14px;border:1.5px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--blue)}
+.mcta .call:active{background:var(--blue-025)}
+@media(max-width:768px){.mcta{display:flex}body:has(.mcta){padding-bottom:80px}}
 @media(max-width:940px){.foot-grid{grid-template-columns:1fr 1fr}.nav-links,.nav-phone,.nav-login{display:none}.burger{display:block}
   .mnav.show{display:block;padding:10px 22px 20px;border-top:1px solid var(--border);background:#fff}
   .mnav a{display:block;padding:12px 4px;font-weight:600;border-bottom:1px solid var(--border)}}
@@ -133,8 +140,14 @@ footer a:hover{color:#fff}
 .bcard .m{margin-top:18px;font-size:.85rem;color:var(--muted);display:flex;gap:16px;padding-top:16px;border-top:1px solid var(--border)}
 .bcard .rd{color:var(--blue);font-weight:700;margin-top:16px;display:inline-flex;align-items:center;gap:7px;transition:gap .2s}
 .bcard:hover .rd{gap:12px}
+.blog-filter{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;padding:34px 0 6px}
+.fchip{background:#fff;border:1.5px solid var(--border);color:var(--ink);font-family:var(--font-body);font-weight:600;font-size:.92rem;
+  padding:9px 16px;border-radius:999px;cursor:pointer;transition:.18s;white-space:nowrap}
+.fchip:hover{border-color:var(--blue);color:var(--blue)}
+.fchip.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.blog-empty{display:none;text-align:center;color:var(--muted);padding:40px 0 20px}
 @media(max-width:940px){.blog-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.blog-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.blog-grid{grid-template-columns:1fr}.blog-filter{padding:24px 0 4px}.fchip{font-size:.88rem;padding:8px 14px}}
 </style>
 </head><body>
 <header>
@@ -169,63 +182,267 @@ footer a:hover{color:#fff}
   <h1 style="margin-top:16px">Как законно избавиться от долгов</h1>
   <p>Разбираем банкротство, списание займов и права должника простым языком — без юридического жаргона.</p>
 </div></div>
-<div class="wrap"><div class="blog-grid"><a class="bcard reveal" href="bankrotstvo-fizlic.html">
+<div class="wrap">
+  <div class="blog-filter"><button class="fchip active" onclick="filterCat(this,'all')">Все статьи</button><button class="fchip" onclick="filterCat(this,'Банкротство')">Банкротство</button><button class="fchip" onclick="filterCat(this,'Микрозаймы')">Микрозаймы</button><button class="fchip" onclick="filterCat(this,'Права должника')">Права должника</button><button class="fchip" onclick="filterCat(this,'Через МФЦ')">Через МФЦ</button><button class="fchip" onclick="filterCat(this,'Кредиты')">Кредиты</button><button class="fchip" onclick="filterCat(this,'Жильё')">Жильё</button><button class="fchip" onclick="filterCat(this,'ЖКХ')">ЖКХ</button><button class="fchip" onclick="filterCat(this,'Ипотека')">Ипотека</button><button class="fchip" onclick="filterCat(this,'Стоимость')">Стоимость</button><button class="fchip" onclick="filterCat(this,'Приставы')">Приставы</button><button class="fchip" onclick="filterCat(this,'Суд')">Суд</button><button class="fchip" onclick="filterCat(this,'Кредитная история')">Кредитная история</button><button class="fchip" onclick="filterCat(this,'Советы')">Советы</button><button class="fchip" onclick="filterCat(this,'Долги')">Долги</button></div>
+  <div class="blog-grid" id="blogGrid"><a class="bcard reveal" href="bankrotstvo-fizlic.html" data-tag="Банкротство">
   <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
   <span class="cat">Банкротство</span>
   <h3>Банкротство физических лиц в 2026 году</h3><p>Банкротство физического лица — это законный способ полностью избавиться от долгов, которые вы больше не можете платить. Разбираем …</p>
   <div class="m"><span>🗓 10 августа 2026</span><span>⏱ 8 мин</span></div>
-  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="spisanie-mikrozaymov.html">
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="spisanie-mikrozaymov.html" data-tag="Микрозаймы">
   <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 2.5-5 1.5-5 4a2.5 2 0 0 0 5 0"/></svg></div>
   <span class="cat">Микрозаймы</span>
   <h3>Как законно списать долги по микрозаймам и МФО в 2026 году</h3><p>Микрозаймы затягивают быстрее любых других долгов: проценты растут, приходят новые займы на погашение старых, и сумма превращается…</p>
   <div class="m"><span>🗓 8 августа 2026</span><span>⏱ 7 мин</span></div>
-  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="zashchita-ot-kollektorov.html">
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="zashchita-ot-kollektorov.html" data-tag="Права должника">
   <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
   <span class="cat">Права должника</span>
   <h3>Как защититься от коллекторов в 2026 году</h3><p>Звонки, угрозы, сообщения родственникам — коллекторы давят, рассчитывая, что вы не знаете своих прав. На самом деле закон жёстко о…</p>
   <div class="m"><span>🗓 5 августа 2026</span><span>⏱ 6 мин</span></div>
-  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="bankrotstvo-bez-suda-mfc.html">
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="bankrotstvo-bez-suda-mfc.html" data-tag="Через МФЦ">
   <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-7h6v7"/></svg></div>
   <span class="cat">Через МФЦ</span>
   <h3>Банкротство без суда через МФЦ в 2026 году</h3><p>С 2020 года у россиян есть способ списать долги бесплатно и без суда — через МФЦ. В 2026 году лимиты расширены, и процедура доступ…</p>
   <div class="m"><span>🗓 3 августа 2026</span><span>⏱ 6 мин</span></div>
-  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="spisanie-kreditov.html">
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="spisanie-kreditov.html" data-tag="Кредиты">
   <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg></div>
   <span class="cat">Кредиты</span>
   <h3>Как законно списать кредиты в 2026 году</h3><p>Когда платежи по кредитам съедают почти весь доход, кажется, что выхода нет. На самом деле законных способов несколько — от отсроч…</p>
   <div class="m"><span>🗓 7 августа 2026</span><span>⏱ 7 мин</span></div>
-  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="posledstviya-bankrotstva.html">
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="posledstviya-bankrotstva.html" data-tag="Банкротство">
   <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
   <span class="cat">Банкротство</span>
   <h3>Последствия банкротства физлица в 2026 году</h3><p>Банкротства часто боятся из-за слухов: «заберут всё», «испортят жизнь», «не выпустят за границу». Разберём по фактам, какие послед…</p>
   <div class="m"><span>🗓 6 августа 2026</span><span>⏱ 7 мин</span></div>
-  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="edinstvennoe-zhilyo-bankrotstvo.html">
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="edinstvennoe-zhilyo-bankrotstvo.html" data-tag="Жильё">
   <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
   <span class="cat">Жильё</span>
   <h3>Заберут ли единственное жильё при банкротстве в 2026 году</h3><p>Самый частый страх перед банкротством — «останусь без квартиры». Разберём, что закон говорит о единственном жилье, и в каких случа…</p>
   <div class="m"><span>🗓 5 августа 2026</span><span>⏱ 6 мин</span></div>
-  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="spisanie-dolgov-po-zhkh.html">
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="spisanie-dolgov-po-zhkh.html" data-tag="ЖКХ">
   <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6M10 4V2M12 4V2M14 4V2"/></svg></div>
   <span class="cat">ЖКХ</span>
   <h3>Как списать долги по ЖКХ в 2026 году</h3><p>Долг за коммуналку растёт незаметно, а потом приходит иск или отключают услуги. Разберём законные способы уменьшить или полностью …</p>
   <div class="m"><span>🗓 4 августа 2026</span><span>⏱ 6 мин</span></div>
-  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="bankrotstvo-s-ipotekoy.html">
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="bankrotstvo-s-ipotekoy.html" data-tag="Ипотека">
   <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9.5 13a2.5 2 0 0 1 5 0c0 2-2.5 1.4-2.5 3M12 19h.01"/></svg></div>
   <span class="cat">Ипотека</span>
   <h3>Банкротство при ипотеке в 2026 году</h3><p>Ипотека — самая непростая ситуация в банкротстве: квартира в залоге у банка, и правило о защите единственного жилья работает не та…</p>
   <div class="m"><span>🗓 3 августа 2026</span><span>⏱ 7 мин</span></div>
-  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="stoimost-bankrotstva.html">
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="stoimost-bankrotstva.html" data-tag="Стоимость">
   <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 2.5-5 1.5-5 4a2.5 2 0 0 0 5 0"/></svg></div>
   <span class="cat">Стоимость</span>
   <h3>Сколько стоит банкротство физлица в 2026 году</h3><p>Один из главных вопросов перед банкротством — сколько это стоит. Разложим цену на понятные части и объясним, почему начать можно б…</p>
   <div class="m"><span>🗓 2 августа 2026</span><span>⏱ 7 мин</span></div>
-  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="bankrotstvo-poshagovaya-instrukciya.html" data-tag="Банкротство">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+  <span class="cat">Банкротство</span>
+  <h3>Банкротство физлица</h3><p>Собрали в одном месте всё, что нужно знать о банкротстве физического лица в 2026 году — от первых шагов до жизни после списания до…</p>
+  <div class="m"><span>🗓 3 марта 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="bankrotstvo-suprugov.html" data-tag="Банкротство">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+  <span class="cat">Банкротство</span>
+  <h3>Банкротство супругов</h3><p>Если долги накопились у обоих супругов, возникает логичный вопрос — банкротиться порознь или сразу вдвоём. Разбираемся, как это ра…</p>
+  <div class="m"><span>🗓 17 марта 2026</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="bankrotstvo-pensionera.html" data-tag="Банкротство">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+  <span class="cat">Банкротство</span>
+  <h3>Банкротство пенсионера</h3><p>Пенсионный возраст — не преграда для списания долгов. Рассказываем, как проходит банкротство пенсионера и что при этом происходит …</p>
+  <div class="m"><span>🗓 2 апреля 2026</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="bankrotstvo-ip.html" data-tag="Банкротство">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+  <span class="cat">Банкротство</span>
+  <h3>Банкротство ИП с долгами</h3><p>Если бизнес не пошёл и долгов накопилось больше, чем ИП способен потянуть, банкротство может стать законным выходом — рассказываем…</p>
+  <div class="m"><span>🗓 21 апреля 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="finansovyj-upravlyayushchij.html" data-tag="Банкротство">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+  <span class="cat">Банкротство</span>
+  <h3>Кто такой финансовый управляющий и зачем он нужен</h3><p>Финансовый управляющий — ключевая фигура в любом судебном банкротстве. Разбираемся, кто это, за что он отвечает и сколько стоит ег…</p>
+  <div class="m"><span>🗓 9 мая 2026</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="dokumenty-dlya-bankrotstva.html" data-tag="Банкротство">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+  <span class="cat">Банкротство</span>
+  <h3>Какие документы нужны для банкротства физлица</h3><p>Собрать документы для банкротства кажется самой сложной частью процедуры — на деле большинство бумаг можно получить онлайн за пару…</p>
+  <div class="m"><span>🗓 22 августа 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="skolko-dlitsya-bankrotstvo.html" data-tag="Банкротство">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+  <span class="cat">Банкротство</span>
+  <h3>Сколько длится банкротство физлица</h3><p>Один из первых вопросов, который задают перед банкротством, — сколько всё это будет длиться. Разбираем реальные сроки судебной про…</p>
+  <div class="m"><span>🗓 22 августа 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="otkaz-v-bankrotstve.html" data-tag="Банкротство">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+  <span class="cat">Банкротство</span>
+  <h3>Когда суд может отказать в банкротстве</h3><p>Полный отказ в банкротстве — редкость, но знать о возможных причинах стоит заранее. Рассказываем, из-за чего суд может затянуть ил…</p>
+  <div class="m"><span>🗓 22 августа 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="nechem-platit-kredit.html" data-tag="Кредиты">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg></div>
+  <span class="cat">Кредиты</span>
+  <h3>Нечем платить кредит</h3><p>Если платить по кредитам стало нечем, важно не тянуть время и не поддаваться панике. Рассказываем, какие законные шаги можно предп…</p>
+  <div class="m"><span>🗓 22 августа 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="kreditnye-kanikuly.html" data-tag="Кредиты">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg></div>
+  <span class="cat">Кредиты</span>
+  <h3>Кредитные каникулы</h3><p>Кредитные каникулы — законный способ временно снизить нагрузку по кредиту, если доход резко упал. Разбираем, кто может ими восполь…</p>
+  <div class="m"><span>🗓 22 августа 2026</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="refinansirovanie-kreditov.html" data-tag="Кредиты">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg></div>
+  <span class="cat">Кредиты</span>
+  <h3>Рефинансирование кредитов</h3><p>Рефинансирование обещает более низкую ставку и один платёж вместо нескольких, но подходит не всем. Рассказываем, когда перекредито…</p>
+  <div class="m"><span>🗓 12.03.2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="restrukturizaciya-dolga.html" data-tag="Кредиты">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg></div>
+  <span class="cat">Кредиты</span>
+  <h3>Реструктуризация долга по кредиту</h3><p>Если платить по кредиту стало трудно, не обязательно сразу копить просрочку — можно попробовать договориться с банком напрямую. Ра…</p>
+  <div class="m"><span>🗓 18.04.2026</span><span>⏱ 8 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="spisanie-kreditnoj-karty.html" data-tag="Кредиты">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg></div>
+  <span class="cat">Кредиты</span>
+  <h3>Как списать долг по кредитной карте</h3><p>Долг по кредитной карте растёт быстрее, чем по обычному кредиту, из-за процентов и штрафов за просрочку. Рассказываем, какие закон…</p>
+  <div class="m"><span>🗓 22.05.2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="avtokredit-dolgi.html" data-tag="Кредиты">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/></svg></div>
+  <span class="cat">Кредиты</span>
+  <h3>Что делать с долгами по автокредиту</h3><p>Автокредит — это залоговый заём, и просрочка по нему грозит не только штрафами, но и изъятием машины. Рассказываем, как банк может…</p>
+  <div class="m"><span>🗓 10.06.2026</span><span>⏱ 8 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="kak-ne-platit-mfo-zakonno.html" data-tag="Микрозаймы">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 2.5-5 1.5-5 4a2.5 2 0 0 0 5 0"/></svg></div>
+  <span class="cat">Микрозаймы</span>
+  <h3>Как законно перестать платить микрозаймы</h3><p>Долг по микрозайму может вырасти в разы быстрее, чем по обычному кредиту, а звонки коллекторов пугают. Рассказываем, какие законны…</p>
+  <div class="m"><span>🗓 05.07.2026</span><span>⏱ 8 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="proshchenie-dolga-mfo.html" data-tag="Микрозаймы">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 2.5-5 1.5-5 4a2.5 2 0 0 0 5 0"/></svg></div>
+  <span class="cat">Микрозаймы</span>
+  <h3>Могут ли простить долг по микрозайму</h3><p>Заёмщики часто надеются, что микрофинансовая организация просто «войдёт в положение» и спишет долг. На практике так почти не бывае…</p>
+  <div class="m"><span>🗓 2026-08-22</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="nezakonnye-procenty-mfo.html" data-tag="Микрозаймы">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 2.5-5 1.5-5 4a2.5 2 0 0 0 5 0"/></svg></div>
+  <span class="cat">Микрозаймы</span>
+  <h3>Незаконные проценты МФО</h3><p>Многие заёмщики годами платят проценты по микрозайму, даже не подозревая, что часть начислений незаконна. Разбираемся, какие огран…</p>
+  <div class="m"><span>🗓 2026-08-22</span><span>⏱ 8 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="mfo-podala-v-sud.html" data-tag="Микрозаймы">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 2.5-5 1.5-5 4a2.5 2 0 0 0 5 0"/></svg></div>
+  <span class="cat">Микрозаймы</span>
+  <h3>МФО подала в суд</h3><p>Получить извещение о судебном иске от МФО тревожно, но это не повод паниковать. У должника есть законные инструменты, чтобы разобр…</p>
+  <div class="m"><span>🗓 2026-08-22</span><span>⏱ 8 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="kollektory-zvonyat-rodstvennikam.html" data-tag="Права должника">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+  <span class="cat">Права должника</span>
+  <h3>Коллекторы звонят родственникам</h3><p>Когда коллекторы начинают звонить не самому должнику, а его родственникам, соседям или коллегам, это вызывает у семьи стресс и нед…</p>
+  <div class="m"><span>🗓 2026-08-22</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="kak-obshchatsya-s-kollektorami.html" data-tag="Права должника">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+  <span class="cat">Права должника</span>
+  <h3>Как правильно общаться с коллекторами</h3><p>Разговор с коллектором вызывает стресс, но паника только мешает защитить свои права. Разбираем, как строить диалог спокойно, что з…</p>
+  <div class="m"><span>🗓 2026-08-22</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="zhaloba-na-kollektorov.html" data-tag="Права должника">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+  <span class="cat">Права должника</span>
+  <h3>Как подать жалобу на коллекторов</h3><p>Федеральный закон №230-ФЗ чётко ограничивает, что коллекторы могут делать при взыскании долга, а что — нет. Если сотрудники коллек…</p>
+  <div class="m"><span>🗓 22 августа 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="prodali-dolg-kollektoram.html" data-tag="Права должника">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+  <span class="cat">Права должника</span>
+  <h3>Банк продал долг коллекторам</h3><p>Уведомление о том, что банк продал ваш долг коллекторам, часто пугает больше, чем сам факт просрочки. На самом деле это распростра…</p>
+  <div class="m"><span>🗓 22 августа 2026</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="arest-scheta-pristavami.html" data-tag="Приставы">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M12 3l9 5H3zM6 8v10M18 8v10M10 8v10M14 8v10"/></svg></div>
+  <span class="cat">Приставы</span>
+  <h3>Приставы арестовали счёт</h3><p>Заблокированная карта — всегда стресс, особенно если о долге вы узнаёте только в этот момент. Разбираемся, почему приставы арестов…</p>
+  <div class="m"><span>🗓 22 августа 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="kak-uznat-svoi-dolgi.html" data-tag="Приставы">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M12 3l9 5H3zM6 8v10M18 8v10M10 8v10M14 8v10"/></svg></div>
+  <span class="cat">Приставы</span>
+  <h3>Как узнать свои долги у судебных приставов</h3><p>О некоторых долгах человек узнаёт только в аэропорту, когда его не выпускают за границу, или в момент, когда внезапно арестовали с…</p>
+  <div class="m"><span>🗓 22 августа 2026</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="uderzhanie-iz-zarplaty.html" data-tag="Приставы">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M12 3l9 5H3zM6 8v10M18 8v10M10 8v10M14 8v10"/></svg></div>
+  <span class="cat">Приставы</span>
+  <h3>Приставы удерживают из зарплаты</h3><p>Если у вас есть официальная работа и открытое исполнительное производство, приставы вправе направить работодателю постановление об…</p>
+  <div class="m"><span>🗓 22 августа 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="sudebnyj-prikaz-otmena.html" data-tag="Суд">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4 21h16M6 8l-3 6h6zM18 8l-3 6h6zM12 3l6 5M12 3L6 8"/></svg></div>
+  <span class="cat">Суд</span>
+  <h3>Как отменить судебный приказ о взыскании долга</h3><p>Судебный приказ — самый быстрый способ взыскать долг: судья выносит его без заседания, а должник часто узнаёт о нём уже от пристав…</p>
+  <div class="m"><span>🗓 2026-08-22</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="iskovaya-davnost-po-dolgam.html" data-tag="Суд">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4 21h16M6 8l-3 6h6zM18 8l-3 6h6zM12 3l6 5M12 3L6 8"/></svg></div>
+  <span class="cat">Суд</span>
+  <h3>Срок исковой давности по долгам</h3><p>Многие уверены: если кредитор не обращался в суд три года, долг «сгорает» сам собой. На деле всё сложнее — исковую давность нужно …</p>
+  <div class="m"><span>🗓 2026-08-22</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="povestka-v-sud-dolg.html" data-tag="Суд">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4 21h16M6 8l-3 6h6zM18 8l-3 6h6zM12 3l6 5M12 3L6 8"/></svg></div>
+  <span class="cat">Суд</span>
+  <h3>Пришла повестка в суд из-за долга</h3><p>Повестка в суд пугает многих должников — кажется, что дело уже проиграно. На самом деле это только начало разбирательства, и у вас…</p>
+  <div class="m"><span>🗓 2026-08-22</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="dolg-za-kommunalku-spisanie.html" data-tag="ЖКХ">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6M10 4V2M12 4V2M14 4V2"/></svg></div>
+  <span class="cat">ЖКХ</span>
+  <h3>Долг за коммуналку</h3><p>Долг за коммунальные услуги растёт незаметно — пени начисляются каждый день. Разбираемся, какие законные способы есть, чтобы умень…</p>
+  <div class="m"><span>🗓 2026-08-22</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="otklyuchili-svet-za-dolgi.html" data-tag="ЖКХ">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6M10 4V2M12 4V2M14 4V2"/></svg></div>
+  <span class="cat">ЖКХ</span>
+  <h3>Отключили свет за долги</h3><p>Отключение электричества — крайняя мера, к которой поставщик услуг может прибегнуть только после соблюдения строгой процедуры. Рас…</p>
+  <div class="m"><span>🗓 2026-08-22</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="ipoteka-nechem-platit.html" data-tag="Ипотека">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9.5 13a2.5 2 0 0 1 5 0c0 2-2.5 1.4-2.5 3M12 19h.01"/></svg></div>
+  <span class="cat">Ипотека</span>
+  <h3>Нечем платить ипотеку</h3><p>Ипотека — самый долгий и самый крупный кредит в жизни большинства семей, поэтому потеря дохода быстро выбивает график платежей из …</p>
+  <div class="m"><span>🗓 10 марта 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="sohranit-zhilyo-pri-dolgah.html" data-tag="Жильё">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+  <span class="cat">Жильё</span>
+  <h3>Как сохранить жильё при долгах</h3><p>Долги пугают в первую очередь тем, что кажется — можно лишиться жилья. На самом деле закон защищает единственное жильё должника, н…</p>
+  <div class="m"><span>🗓 2 апреля 2026</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="kak-uznat-kreditnuyu-istoriyu.html" data-tag="Кредитная история">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></div>
+  <span class="cat">Кредитная история</span>
+  <h3>Как узнать свою кредитную историю бесплатно</h3><p>Кредитная история — это досье о том, как человек брал и возвращал займы. Банки и МФО заглядывают в неё перед решением, поэтому пол…</p>
+  <div class="m"><span>🗓 19 мая 2026</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="vosstanovit-kreditnuyu-istoriyu.html" data-tag="Кредитная история">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></div>
+  <span class="cat">Кредитная история</span>
+  <h3>Как восстановить кредитную историю после банкротства</h3><p>После завершения процедуры банкротства многие сталкиваются с новым вопросом: как жить дальше, если репутация заёмщика испорчена. Х…</p>
+  <div class="m"><span>🗓 7 июня 2026</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="ispravit-kreditnuyu-istoriyu.html" data-tag="Кредитная история">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></div>
+  <span class="cat">Кредитная история</span>
+  <h3>Как исправить плохую кредитную историю</h3><p>Плохая кредитная история — не приговор. Иногда достаточно исправить фактические ошибки, а иногда нужно системно поработать над фин…</p>
+  <div class="m"><span>🗓 14 июля 2026</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="bankrotstvo-ili-restrukturizaciya.html" data-tag="Советы">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 2a7 7 0 0 0-4 12c.6.6 1 1.4 1 2h6c0-.6.4-1.4 1-2a7 7 0 0 0-4-12z"/></svg></div>
+  <span class="cat">Советы</span>
+  <h3>Банкротство или реструктуризация</h3><p>Два законных способа справиться с долгами работают по-разному: один меняет график платежей, другой списывает долг полностью. Разби…</p>
+  <div class="m"><span>🗓 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="dolgovaya-yama-kak-vyjti.html" data-tag="Советы">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 2a7 7 0 0 0-4 12c.6.6 1 1.4 1 2h6c0-.6.4-1.4 1-2a7 7 0 0 0-4-12z"/></svg></div>
+  <span class="cat">Советы</span>
+  <h3>Как выбраться из долговой ямы</h3><p>Кажется, что долги растут быстрее, чем получается их гасить? Разберём пошаговый план, который поможет остановиться, оценить ситуац…</p>
+  <div class="m"><span>🗓 2026</span><span>⏱ 8 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="mify-o-spisanii-dolgov.html" data-tag="Советы">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 2a7 7 0 0 0-4 12c.6.6 1 1.4 1 2h6c0-.6.4-1.4 1-2a7 7 0 0 0-4-12z"/></svg></div>
+  <span class="cat">Советы</span>
+  <h3>7 мифов о списании долгов</h3><p>Вокруг банкротства и списания долгов гуляет много слухов, которые только пугают и мешают принять решение. Разбираем семь самых час…</p>
+  <div class="m"><span>🗓 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="priznaki-chto-pora-bankrotitsya.html" data-tag="Советы">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 2a7 7 0 0 0-4 12c.6.6 1 1.4 1 2h6c0-.6.4-1.4 1-2a7 7 0 0 0-4-12z"/></svg></div>
+  <span class="cat">Советы</span>
+  <h3>5 признаков, что пора банкротиться</h3><p>Как понять, что откладывать решение о долгах больше нельзя? Разбираем пять признаков, которые ясно указывают: пора идти к юристу и…</p>
+  <div class="m"><span>🗓 2026</span><span>⏱ 6 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="bcard reveal" href="spisanie-dolgov-2026-izmeneniya.html" data-tag="Долги">
+  <div class="badge"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 2.5-5 1.5-5 4a2.5 2 0 0 0 5 0"/></svg></div>
+  <span class="cat">Долги</span>
+  <h3>Списание долгов в 2026 году</h3><p>Правила списания долгов регулярно уточняются. Разбираем, что актуально в 2026 году: расширенные лимиты МФЦ, судебная практика и ро…</p>
+  <div class="m"><span>🗓 2026</span><span>⏱ 7 мин</span></div>
+  <span class="rd">Читать статью <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  <p class="blog-empty" id="blogEmpty">В этой категории пока нет статей.</p>
+</div>
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div>
         <div class="foot-brand"><img src="logo.png" alt=""><span>Списали<span class="w2">.com</span></span></div>
-        <p>Всероссийская платформа для законного списания долгов, кредитов и задолженностей. Офисы в 30 городах России.</p>
+        <p>Первый сервис удалённого списания долгов и кредитов по всей России. Всё оформляется дистанционно; офисы в 30 городах.</p>
         <p class="disclaimer">Услуги оказывают юристы-партнёры платформы в рамках Федерального закона №127-ФЗ «О несостоятельности (банкротстве)». Информация на сайте не является публичной офертой.</p>
       </div>
       <div><h4>Платформа</h4><ul>
@@ -252,6 +469,12 @@ footer a:hover{color:#fff}
     </div>
   </div>
 </footer>
+<div class="mcta">
+  <a href="tel:+78000000000" class="call" aria-label="Позвонить">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+  </a>
+  <button class="btn btn-primary" onclick="openQuiz()">Проверить долг бесплатно</button>
+</div>
 
 <div class="quiz-overlay" id="quizOverlay" role="dialog" aria-modal="true" aria-label="Проверка списания долга">
   <div class="quiz-modal">
@@ -264,6 +487,13 @@ footer a:hover{color:#fff}
 
 <script>
 function toggleQ(btn){var q=btn.parentElement;var a=q.querySelector('.a');var open=q.classList.toggle('open');btn.setAttribute('aria-expanded',open);a.style.maxHeight=open?a.scrollHeight+'px':0}
+function filterCat(btn,tag){
+  document.querySelectorAll('.fchip').forEach(function(c){c.classList.remove('active')});btn.classList.add('active');
+  var shown=0;
+  document.querySelectorAll('#blogGrid .bcard').forEach(function(c){
+    var ok=(tag==='all'||c.getAttribute('data-tag')===tag);c.style.display=ok?'':'none';if(ok)shown++;});
+  document.getElementById('blogEmpty').style.display=shown?'none':'block';
+}
 var FORM_ENDPOINT='';
 
 

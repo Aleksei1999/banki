@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://spisali.com/index.html</loc><priority>1.0</priority></url>
-  <url><loc>https://spisali.com/blog.html</loc><priority>0.8</priority></url>
   <url><loc>https://spisali.com/arest-scheta-pristavami.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/avtokredit-dolgi.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/bankrotstvo-bez-suda-mfc.html</loc><priority>0.7</priority></url>
@@ -12,6 +11,7 @@
   <url><loc>https://spisali.com/bankrotstvo-poshagovaya-instrukciya.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/bankrotstvo-s-ipotekoy.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/bankrotstvo-suprugov.html</loc><priority>0.7</priority></url>
+  <url><loc>https://spisali.com/blog.html</loc><priority>0.8</priority></url>
   <url><loc>https://spisali.com/dokumenty-dlya-bankrotstva.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/dolg-za-kommunalku-spisanie.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/dolgovaya-yama-kak-vyjti.html</loc><priority>0.7</priority></url>
@@ -22,6 +22,7 @@
   <url><loc>https://spisali.com/ispravit-kreditnuyu-istoriyu.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/kak-ne-platit-mfo-zakonno.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/kak-obshchatsya-s-kollektorami.html</loc><priority>0.7</priority></url>
+  <url><loc>https://spisali.com/kak-rabotaet.html</loc><priority>0.9</priority></url>
   <url><loc>https://spisali.com/kak-uznat-kreditnuyu-istoriyu.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/kak-uznat-svoi-dolgi.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/kollektory-zvonyat-rodstvennikam.html</loc><priority>0.7</priority></url>
@@ -32,6 +33,7 @@
   <url><loc>https://spisali.com/nezakonnye-procenty-mfo.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/otkaz-v-bankrotstve.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/otklyuchili-svet-za-dolgi.html</loc><priority>0.7</priority></url>
+  <url><loc>https://spisali.com/partnery.html</loc><priority>0.9</priority></url>
   <url><loc>https://spisali.com/posledstviya-bankrotstva.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/povestka-v-sud-dolg.html</loc><priority>0.7</priority></url>
   <url><loc>https://spisali.com/priznaki-chto-pora-bankrotitsya.html</loc><priority>0.7</priority></url>

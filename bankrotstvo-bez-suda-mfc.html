@@ -517,7 +517,7 @@ function quizSubmit(cid,e){
     '<div style="margin-top:14px;background:#F1F8F3;border:1px solid #C6E4D1;border-radius:12px;padding:12px 14px;font-size:.92rem;color:#2E6B45;text-align:left"><b>Что будет дальше.</b> Юрист посмотрит вашу ситуацию и скажет, подходит ли вам списание, сколько это стоит и какие документы понадобятся. Если ваш случай не подходит, честно скажем об этом.</div></div></div>';
   };
   if(typeof FORM_ENDPOINT!=='undefined' && FORM_ENDPOINT){
-    fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(done).catch(function(){alert('Не удалось отправить. Позвоните: '+PHONE)});
+    fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(function(){try{typeof ym!=='undefined'&&ym(112285351,'reachGoal','zayavka')}catch(e){}done()}).catch(function(){alert('Не удалось отправить. Позвоните: '+PHONE)});
   } else { done() }
   return false;
 }

@@ -1432,7 +1432,7 @@ function pSubmit(id,e){e.preventDefault();
   if(cs && !cs.checked){alert('Пожалуйста, подтвердите согласие на обработку персональных данных');return false}
   var payload={name:nm,phone:ph,city:document.getElementById(id+'_city').value.trim(),role:document.getElementById(id+'_role').value,consent:true,source:'partner'};
   var done=function(){document.getElementById(id).querySelector('form').style.display='none';document.getElementById(id+'_ok').style.display='block';};
-  if(FORM_ENDPOINT){fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(done).catch(function(){alert('Не удалось отправить. Позвоните: +7 999 055-78-66')});}
+  if(FORM_ENDPOINT){fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(function(){try{typeof ym!=='undefined'&&ym(112285351,'reachGoal','zayavka')}catch(e){}done()}).catch(function(){alert('Не удалось отправить. Позвоните: +7 999 055-78-66')});}
   else{done()}
   return false;}
 pInit('pformM');
